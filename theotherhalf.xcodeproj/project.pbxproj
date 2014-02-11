@@ -21,6 +21,18 @@
 		A92B32C218AAD3A9008B12D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A418AAD3A9008B12D5 /* UIKit.framework */; };
 		A92B32CA18AAD3A9008B12D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A92B32C818AAD3A9008B12D5 /* InfoPlist.strings */; };
 		A92B32CC18AAD3A9008B12D5 /* theotherhalfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32CB18AAD3A9008B12D5 /* theotherhalfTests.m */; };
+		A92B32D818AADCCF008B12D5 /* LanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32D618AADCCF008B12D5 /* LanguageViewController.m */; };
+		A92B32D918AADCCF008B12D5 /* LanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32D618AADCCF008B12D5 /* LanguageViewController.m */; };
+		A92B32DA18AADCCF008B12D5 /* LanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92B32D718AADCCF008B12D5 /* LanguageViewController.xib */; };
+		A92B32DB18AADCCF008B12D5 /* LanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92B32D718AADCCF008B12D5 /* LanguageViewController.xib */; };
+		A92B32DF18AADE7E008B12D5 /* SharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32DD18AADE7E008B12D5 /* SharingViewController.m */; };
+		A92B32E018AADE7E008B12D5 /* SharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32DD18AADE7E008B12D5 /* SharingViewController.m */; };
+		A92B32E118AADE7E008B12D5 /* SharingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92B32DE18AADE7E008B12D5 /* SharingViewController.xib */; };
+		A92B32E218AADE7E008B12D5 /* SharingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92B32DE18AADE7E008B12D5 /* SharingViewController.xib */; };
+		A92B32E618AADE8D008B12D5 /* EditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32E418AADE8D008B12D5 /* EditionViewController.m */; };
+		A92B32E718AADE8D008B12D5 /* EditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92B32E418AADE8D008B12D5 /* EditionViewController.m */; };
+		A92B32E818AADE8D008B12D5 /* EditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92B32E518AADE8D008B12D5 /* EditionViewController.xib */; };
+		A92B32E918AADE8D008B12D5 /* EditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92B32E518AADE8D008B12D5 /* EditionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +65,15 @@
 		A92B32C718AAD3A9008B12D5 /* theotherhalfTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "theotherhalfTests-Info.plist"; sourceTree = "<group>"; };
 		A92B32C918AAD3A9008B12D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A92B32CB18AAD3A9008B12D5 /* theotherhalfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = theotherhalfTests.m; sourceTree = "<group>"; };
+		A92B32D518AADCCF008B12D5 /* LanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageViewController.h; sourceTree = "<group>"; };
+		A92B32D618AADCCF008B12D5 /* LanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageViewController.m; sourceTree = "<group>"; };
+		A92B32D718AADCCF008B12D5 /* LanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageViewController.xib; sourceTree = "<group>"; };
+		A92B32DC18AADE7E008B12D5 /* SharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingViewController.h; sourceTree = "<group>"; };
+		A92B32DD18AADE7E008B12D5 /* SharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingViewController.m; sourceTree = "<group>"; };
+		A92B32DE18AADE7E008B12D5 /* SharingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharingViewController.xib; sourceTree = "<group>"; };
+		A92B32E318AADE8D008B12D5 /* EditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditionViewController.h; sourceTree = "<group>"; };
+		A92B32E418AADE8D008B12D5 /* EditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditionViewController.m; sourceTree = "<group>"; };
+		A92B32E518AADE8D008B12D5 /* EditionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +138,15 @@
 				A92B32B218AAD3A9008B12D5 /* Main.storyboard */,
 				A92B32B518AAD3A9008B12D5 /* ViewController.h */,
 				A92B32B618AAD3A9008B12D5 /* ViewController.m */,
+				A92B32D518AADCCF008B12D5 /* LanguageViewController.h */,
+				A92B32D618AADCCF008B12D5 /* LanguageViewController.m */,
+				A92B32D718AADCCF008B12D5 /* LanguageViewController.xib */,
+				A92B32E318AADE8D008B12D5 /* EditionViewController.h */,
+				A92B32E418AADE8D008B12D5 /* EditionViewController.m */,
+				A92B32E518AADE8D008B12D5 /* EditionViewController.xib */,
+				A92B32DC18AADE7E008B12D5 /* SharingViewController.h */,
+				A92B32DD18AADE7E008B12D5 /* SharingViewController.m */,
+				A92B32DE18AADE7E008B12D5 /* SharingViewController.xib */,
 				A92B32B818AAD3A9008B12D5 /* Images.xcassets */,
 				A92B32A718AAD3A9008B12D5 /* Supporting Files */,
 			);
@@ -230,6 +260,9 @@
 			files = (
 				A92B32B918AAD3A9008B12D5 /* Images.xcassets in Resources */,
 				A92B32AB18AAD3A9008B12D5 /* InfoPlist.strings in Resources */,
+				A92B32DA18AADCCF008B12D5 /* LanguageViewController.xib in Resources */,
+				A92B32E818AADE8D008B12D5 /* EditionViewController.xib in Resources */,
+				A92B32E118AADE7E008B12D5 /* SharingViewController.xib in Resources */,
 				A92B32B418AAD3A9008B12D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +271,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A92B32DB18AADCCF008B12D5 /* LanguageViewController.xib in Resources */,
+				A92B32E918AADE8D008B12D5 /* EditionViewController.xib in Resources */,
 				A92B32CA18AAD3A9008B12D5 /* InfoPlist.strings in Resources */,
+				A92B32E218AADE7E008B12D5 /* SharingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92B32B718AAD3A9008B12D5 /* ViewController.m in Sources */,
+				A92B32E618AADE8D008B12D5 /* EditionViewController.m in Sources */,
 				A92B32B118AAD3A9008B12D5 /* AppDelegate.m in Sources */,
+				A92B32DF18AADE7E008B12D5 /* SharingViewController.m in Sources */,
+				A92B32D818AADCCF008B12D5 /* LanguageViewController.m in Sources */,
 				A92B32AD18AAD3A9008B12D5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A92B32D918AADCCF008B12D5 /* LanguageViewController.m in Sources */,
+				A92B32E718AADE8D008B12D5 /* EditionViewController.m in Sources */,
+				A92B32E018AADE7E008B12D5 /* SharingViewController.m in Sources */,
 				A92B32CC18AAD3A9008B12D5 /* theotherhalfTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +502,7 @@
 				A92B32D118AAD3A9008B12D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A92B32D218AAD3A9008B12D5 /* Build configuration list for PBXNativeTarget "theotherhalfTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +511,7 @@
 				A92B32D418AAD3A9008B12D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
