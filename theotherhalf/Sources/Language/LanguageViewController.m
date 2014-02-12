@@ -10,6 +10,15 @@
 
 @implementation LanguageViewController
 
+#pragma mark Rotation
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return [super supportedInterfaceOrientations] & UIInterfaceOrientationMaskPortrait;
+}
+
+#pragma mark Actions
+
 - (IBAction)setGerman:(id)sender
 {
 }
