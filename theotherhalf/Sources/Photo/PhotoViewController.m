@@ -32,18 +32,6 @@
     }
 }
 
-#pragma mark Actions
-
-- (IBAction)takePhoto:(id)sender
-{
-    [self displayImagePickerWithSourceType:UIImagePickerControllerSourceTypeCamera];
-}
-
-- (IBAction)choosePhoto:(id)sender
-{
-    [self displayImagePickerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-}
-
 #pragma mark Helpers
 
 - (void)displayImagePickerWithSourceType:(UIImagePickerControllerSourceType)sourceType
@@ -61,6 +49,23 @@
     // TODO: Resize & mask
     self.photoImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark Actions
+
+- (IBAction)changeLanguage:(id)sender
+{
+    [self.stackController popViewControllerAnimated:YES];
+}
+
+- (IBAction)takePhoto:(id)sender
+{
+    [self displayImagePickerWithSourceType:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (IBAction)choosePhoto:(id)sender
+{
+    [self displayImagePickerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
 @end
