@@ -16,13 +16,6 @@
 
 @implementation PhotoViewController
 
-#pragma mark Rotation
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return [super supportedInterfaceOrientations] & UIInterfaceOrientationMaskPortrait;
-}
-
 #pragma mark Actions
 
 - (IBAction)takePhoto:(id)sender
