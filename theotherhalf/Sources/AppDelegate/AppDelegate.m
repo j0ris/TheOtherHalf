@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "LanguageViewController.h"
+#import "TheOtherHalfApplication.h"
 
 @implementation AppDelegate
 
@@ -18,9 +18,7 @@
     self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     
-    LanguageViewController *languageViewController = [[LanguageViewController alloc] init];
-    self.window.rootViewController = [[HLSStackController alloc] initWithRootViewController:languageViewController];
-    
+    self.window.rootViewController = [TheOtherHalfApplication sharedApplication].rootViewController;
     return YES;
 }
 

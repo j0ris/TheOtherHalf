@@ -8,42 +8,30 @@
 
 #import "LanguageViewController.h"
 
-#import "PhotoViewController.h"
+#import "TheOtherHalfApplication.h"
 
 @implementation LanguageViewController
-
-#pragma mark Helpers
-
-- (void)displayPhotoViewWithLocalization:(NSString *)localization
-{
-    NSAssert([[[NSBundle mainBundle] localizations] indexOfObject:localization] != NSNotFound, @"Localization must be found in the main bundle");
-    
-    [NSBundle setLocalization:localization];
-    
-    PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
-    [self.stackController pushViewController:photoViewController withTransitionClass:[HLSTransitionFlowFromRight class] animated:YES];
-}
 
 #pragma mark Actions
 
 - (IBAction)setGerman:(id)sender
 {
-    [self displayPhotoViewWithLocalization:@"de"];
+    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"de"];
 }
 
 - (IBAction)setFrench:(id)sender
 {
-    [self displayPhotoViewWithLocalization:@"fr"];
+    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"fr"];
 }
 
 - (IBAction)setItalian:(id)sender
 {
-    [self displayPhotoViewWithLocalization:@"it"];
+    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"it"];
 }
 
 - (IBAction)setEnglish:(id)sender
 {
-    [self displayPhotoViewWithLocalization:@"en"];
+    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"en"];
 }
 
 @end
