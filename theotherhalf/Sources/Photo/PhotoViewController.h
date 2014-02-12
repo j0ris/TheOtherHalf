@@ -6,6 +6,6 @@
 //  Copyright (c) 2014 The Other Half. All rights reserved.
 //
 
-@interface PhotoViewController : HLSViewController
+@interface PhotoViewController : HLSViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end

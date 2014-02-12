@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoViewController">
             <connections>
+                <outlet property="choosePhotoButton" destination="OqJ-tY-czT" id="Vmr-UF-NIA"/>
                 <outlet property="photoImageView" destination="PK0-gN-fq7" id="xuo-gh-Qye"/>
+                <outlet property="takePhotoButton" destination="5sa-Hj-80y" id="fOy-JV-f6i"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
