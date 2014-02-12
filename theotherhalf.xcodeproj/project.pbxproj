@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FFDF28218ABF39800919C19 /* CoconutKit_bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDF27F18ABF39800919C19 /* CoconutKit_bootstrap.m */; };
+		6FFDF28318ABF39800919C19 /* CoconutKit-resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FFDF28018ABF39800919C19 /* CoconutKit-resources.bundle */; };
+		6FFDF28418ABF39800919C19 /* CoconutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28118ABF39800919C19 /* CoconutKit.framework */; };
+		6FFDF28618ABF3D900919C19 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28518ABF3D900919C19 /* CoreData.framework */; };
+		6FFDF28818ABF3DE00919C19 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28718ABF3DE00919C19 /* CoreText.framework */; };
+		6FFDF28A18ABF3E800919C19 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28918ABF3E800919C19 /* MessageUI.framework */; };
+		6FFDF28C18ABF3F000919C19 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28B18ABF3F000919C19 /* MobileCoreServices.framework */; };
+		6FFDF28E18ABF3F500919C19 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28D18ABF3F500919C19 /* QuartzCore.framework */; };
+		6FFDF29018ABF3FB00919C19 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDF28F18ABF3FB00919C19 /* QuickLook.framework */; };
 		A92B32A118AAD3A9008B12D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A018AAD3A9008B12D5 /* Foundation.framework */; };
 		A92B32A318AAD3A9008B12D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */; };
 		A92B32A518AAD3A9008B12D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A418AAD3A9008B12D5 /* UIKit.framework */; };
@@ -46,6 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6FFDF27F18ABF39800919C19 /* CoconutKit_bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoconutKit_bootstrap.m; sourceTree = "<group>"; };
+		6FFDF28018ABF39800919C19 /* CoconutKit-resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "CoconutKit-resources.bundle"; sourceTree = "<group>"; };
+		6FFDF28118ABF39800919C19 /* CoconutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoconutKit.framework; sourceTree = "<group>"; };
+		6FFDF28518ABF3D900919C19 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6FFDF28718ABF3DE00919C19 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		6FFDF28918ABF3E800919C19 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6FFDF28B18ABF3F000919C19 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6FFDF28D18ABF3F500919C19 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6FFDF28F18ABF3FB00919C19 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		A92B329D18AAD3A9008B12D5 /* theotherhalf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theotherhalf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92B32A018AAD3A9008B12D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,9 +99,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FFDF29018ABF3FB00919C19 /* QuickLook.framework in Frameworks */,
+				6FFDF28E18ABF3F500919C19 /* QuartzCore.framework in Frameworks */,
+				6FFDF28C18ABF3F000919C19 /* MobileCoreServices.framework in Frameworks */,
+				6FFDF28A18ABF3E800919C19 /* MessageUI.framework in Frameworks */,
+				6FFDF28818ABF3DE00919C19 /* CoreText.framework in Frameworks */,
+				6FFDF28618ABF3D900919C19 /* CoreData.framework in Frameworks */,
 				A92B32A318AAD3A9008B12D5 /* CoreGraphics.framework in Frameworks */,
 				A92B32A518AAD3A9008B12D5 /* UIKit.framework in Frameworks */,
 				A92B32A118AAD3A9008B12D5 /* Foundation.framework in Frameworks */,
+				6FFDF28418ABF39800919C19 /* CoconutKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,9 +125,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FFDF27C18ABF38900919C19 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				6FFDF27D18ABF39800919C19 /* CoconutKit-2.0.2.13-Release.staticframework */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+		6FFDF27D18ABF39800919C19 /* CoconutKit-2.0.2.13-Release.staticframework */ = {
+			isa = PBXGroup;
+			children = (
+				6FFDF27E18ABF39800919C19 /* Bootstrap */,
+				6FFDF28018ABF39800919C19 /* CoconutKit-resources.bundle */,
+				6FFDF28118ABF39800919C19 /* CoconutKit.framework */,
+			);
+			name = "CoconutKit-2.0.2.13-Release.staticframework";
+			path = "Externals/CoconutKit-2.0.2.13-Release.staticframework";
+			sourceTree = "<group>";
+		};
+		6FFDF27E18ABF39800919C19 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				6FFDF27F18ABF39800919C19 /* CoconutKit_bootstrap.m */,
+			);
+			path = Bootstrap;
+			sourceTree = "<group>";
+		};
 		A92B329418AAD3A9008B12D5 = {
 			isa = PBXGroup;
 			children = (
+				6FFDF27C18ABF38900919C19 /* Externals */,
 				A92B32A618AAD3A9008B12D5 /* theotherhalf */,
 				A92B32C518AAD3A9008B12D5 /* theotherhalfTests */,
 				A92B329F18AAD3A9008B12D5 /* Frameworks */,
@@ -122,8 +175,14 @@
 		A92B329F18AAD3A9008B12D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A92B32A018AAD3A9008B12D5 /* Foundation.framework */,
+				6FFDF28518ABF3D900919C19 /* CoreData.framework */,
 				A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */,
+				6FFDF28718ABF3DE00919C19 /* CoreText.framework */,
+				A92B32A018AAD3A9008B12D5 /* Foundation.framework */,
+				6FFDF28918ABF3E800919C19 /* MessageUI.framework */,
+				6FFDF28B18ABF3F000919C19 /* MobileCoreServices.framework */,
+				6FFDF28D18ABF3F500919C19 /* QuartzCore.framework */,
+				6FFDF28F18ABF3FB00919C19 /* QuickLook.framework */,
 				A92B32A418AAD3A9008B12D5 /* UIKit.framework */,
 				A92B32BF18AAD3A9008B12D5 /* XCTest.framework */,
 			);
@@ -261,6 +320,7 @@
 				A92B32B918AAD3A9008B12D5 /* Images.xcassets in Resources */,
 				A92B32AB18AAD3A9008B12D5 /* InfoPlist.strings in Resources */,
 				A92B32DA18AADCCF008B12D5 /* LanguageViewController.xib in Resources */,
+				6FFDF28318ABF39800919C19 /* CoconutKit-resources.bundle in Resources */,
 				A92B32E818AADE8D008B12D5 /* EditionViewController.xib in Resources */,
 				A92B32E118AADE7E008B12D5 /* SharingViewController.xib in Resources */,
 				A92B32B418AAD3A9008B12D5 /* Main.storyboard in Resources */,
@@ -286,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92B32B718AAD3A9008B12D5 /* ViewController.m in Sources */,
+				6FFDF28218ABF39800919C19 /* CoconutKit_bootstrap.m in Sources */,
 				A92B32E618AADE8D008B12D5 /* EditionViewController.m in Sources */,
 				A92B32B118AAD3A9008B12D5 /* AppDelegate.m in Sources */,
 				A92B32DF18AADE7E008B12D5 /* SharingViewController.m in Sources */,
@@ -420,6 +481,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/defagos/Development/gitrepo/TheOtherHalf/Externals/CoconutKit-2.0.2.13-Release.staticframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theotherhalf/theotherhalf-Prefix.pch";
 				INFOPLIST_FILE = "theotherhalf/theotherhalf-Info.plist";
@@ -433,6 +498,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/defagos/Development/gitrepo/TheOtherHalf/Externals/CoconutKit-2.0.2.13-Release.staticframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theotherhalf/theotherhalf-Prefix.pch";
 				INFOPLIST_FILE = "theotherhalf/theotherhalf-Info.plist";
