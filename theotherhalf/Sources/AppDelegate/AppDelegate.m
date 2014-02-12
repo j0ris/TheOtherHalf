@@ -18,7 +18,8 @@
     self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     
-    self.window.rootViewController = [[LanguageViewController alloc] init];
+    LanguageViewController *languageViewController = [[LanguageViewController alloc] init];
+    self.window.rootViewController = [[HLSStackController alloc] initWithRootViewController:languageViewController];
     
     return YES;
 }
