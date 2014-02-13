@@ -387,7 +387,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/defagos/Development/gitrepo/TheOtherHalf/Externals/CoconutKit-2.0.2.13-Release.staticframework",
+					"../theotherhalf/Externals/CoconutKit-2.0.2.13-Release.staticframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theotherhalf/Sources/theotherhalf-Prefix.pch";
@@ -404,7 +404,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/defagos/Development/gitrepo/TheOtherHalf/Externals/CoconutKit-2.0.2.13-Release.staticframework",
+					"../theotherhalf/Externals/CoconutKit-2.0.2.13-Release.staticframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theotherhalf/Sources/theotherhalf-Prefix.pch";
