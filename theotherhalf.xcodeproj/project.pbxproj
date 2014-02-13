@@ -31,6 +31,11 @@
 		A92B32A118AAD3A9008B12D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A018AAD3A9008B12D5 /* Foundation.framework */; };
 		A92B32A318AAD3A9008B12D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */; };
 		A92B32A518AAD3A9008B12D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A418AAD3A9008B12D5 /* UIKit.framework */; };
+		A98BA2AB18AD6A31000E0631 /* presentation-de.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A618AD6A31000E0631 /* presentation-de.html */; };
+		A98BA2AC18AD6A31000E0631 /* presentation-en.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A718AD6A31000E0631 /* presentation-en.html */; };
+		A98BA2AD18AD6A31000E0631 /* presentation-fr.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A818AD6A31000E0631 /* presentation-fr.html */; };
+		A98BA2AE18AD6A31000E0631 /* presentation-it.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A918AD6A31000E0631 /* presentation-it.html */; };
+		A98BA2AF18AD6A31000E0631 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2AA18AD6A31000E0631 /* style.css */; };
 		A9FE618818ACEE2B00D48FF9 /* button-camera-roll.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FE616C18ACEE2B00D48FF9 /* button-camera-roll.png */; };
 		A9FE618918ACEE2B00D48FF9 /* button-camera-roll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FE616D18ACEE2B00D48FF9 /* button-camera-roll@2x.png */; };
 		A9FE618A18ACEE2B00D48FF9 /* button-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FE616E18ACEE2B00D48FF9 /* button-camera.png */; };
@@ -97,6 +102,11 @@
 		A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A92B32A418AAD3A9008B12D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A92B32BF18AAD3A9008B12D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A98BA2A618AD6A31000E0631 /* presentation-de.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-de.html"; sourceTree = "<group>"; };
+		A98BA2A718AD6A31000E0631 /* presentation-en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-en.html"; sourceTree = "<group>"; };
+		A98BA2A818AD6A31000E0631 /* presentation-fr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-fr.html"; sourceTree = "<group>"; };
+		A98BA2A918AD6A31000E0631 /* presentation-it.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-it.html"; sourceTree = "<group>"; };
+		A98BA2AA18AD6A31000E0631 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		A9FE616C18ACEE2B00D48FF9 /* button-camera-roll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-camera-roll.png"; sourceTree = "<group>"; };
 		A9FE616D18ACEE2B00D48FF9 /* button-camera-roll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-camera-roll@2x.png"; sourceTree = "<group>"; };
 		A9FE616E18ACEE2B00D48FF9 /* button-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-camera.png"; sourceTree = "<group>"; };
@@ -269,6 +279,7 @@
 		6FFDF2A518ABF68D00919C19 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A98BA2A518AD6A31000E0631 /* html */,
 				6F5B18EB18AC93F800791960 /* Images */,
 				6FF9145E18ABF92100E9612E /* Localizable.strings */,
 				6FFDF2A618ABF68D00919C19 /* Images.xcassets */,
@@ -314,6 +325,18 @@
 				C086F71907124F39AFF01831 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A98BA2A518AD6A31000E0631 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				A98BA2A618AD6A31000E0631 /* presentation-de.html */,
+				A98BA2A718AD6A31000E0631 /* presentation-en.html */,
+				A98BA2A818AD6A31000E0631 /* presentation-fr.html */,
+				A98BA2A918AD6A31000E0631 /* presentation-it.html */,
+				A98BA2AA18AD6A31000E0631 /* style.css */,
+			);
+			path = html;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +398,7 @@
 			files = (
 				6FF9146318ABF92100E9612E /* Localizable.strings in Resources */,
 				A9FE619E18ACEE2B00D48FF9 /* mask-overlay-en.png in Resources */,
+				A98BA2AB18AD6A31000E0631 /* presentation-de.html in Resources */,
 				A9FE619F18ACEE2B00D48FF9 /* mask-overlay-en@2x.png in Resources */,
 				A9FE618918ACEE2B00D48FF9 /* button-camera-roll@2x.png in Resources */,
 				A9FE619218ACEE2B00D48FF9 /* logo-website.png in Resources */,
@@ -386,9 +410,12 @@
 				A9FE618F18ACEE2B00D48FF9 /* button-twitter@2x.png in Resources */,
 				6FFDF2A418ABF61500919C19 /* PhotoViewController.xib in Resources */,
 				A9FE619318ACEE2B00D48FF9 /* logo-website@2x.png in Resources */,
+				A98BA2AF18AD6A31000E0631 /* style.css in Resources */,
+				A98BA2AD18AD6A31000E0631 /* presentation-fr.html in Resources */,
 				A9FE61A118ACEE2B00D48FF9 /* mask-overlay-fr@2x.png in Resources */,
 				A9FE619D18ACEE2B00D48FF9 /* mask-overlay-de@2x.png in Resources */,
 				A9FE619518ACEE2B00D48FF9 /* mask-de@2x.png in Resources */,
+				A98BA2AC18AD6A31000E0631 /* presentation-en.html in Resources */,
 				A9FE618A18ACEE2B00D48FF9 /* button-camera.png in Resources */,
 				6F5B18EE18AC93F800791960 /* mask-photo.png in Resources */,
 				6F5B18EF18AC93F800791960 /* mask-photo@2x.png in Resources */,
@@ -406,6 +433,7 @@
 				A9FE619A18ACEE2B00D48FF9 /* mask-it.png in Resources */,
 				A9FE619718ACEE2B00D48FF9 /* mask-en@2x.png in Resources */,
 				A9FE61A218ACEE2B00D48FF9 /* mask-overlay-it.png in Resources */,
+				A98BA2AE18AD6A31000E0631 /* presentation-it.html in Resources */,
 				A9FE618B18ACEE2B00D48FF9 /* button-camera@2x.png in Resources */,
 				6FFDF28318ABF39800919C19 /* CoconutKit-resources.bundle in Resources */,
 			);
