@@ -27,7 +27,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-Hj-80y" userLabel="Take Photo Button">
-                    <rect key="frame" x="58" y="482" width="48" height="48"/>
+                    <rect key="frame" x="136" y="482" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" image="button-camera.png">
@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqJ-tY-czT" userLabel="Choose Photo Button">
-                    <rect key="frame" x="136" y="482" width="48" height="48"/>
+                    <rect key="frame" x="58" y="482" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" image="button-camera-roll.png">
@@ -61,7 +61,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu">
-                    <rect key="frame" x="0.0" y="32" width="320" height="80"/>
+                    <rect key="frame" x="-78" y="32" width="320" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="logo-website.png">
@@ -71,10 +71,10 @@
                         <action selector="goToWebSite:" destination="-1" eventType="touchUpInside" id="zvQ-Xd-cXz"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-mz-Gri" userLabel="Language Button">
-                    <rect key="frame" x="10" y="31" width="68" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-mz-Gri" userLabel="Language Button">
+                    <rect key="frame" x="191" y="50" width="109" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Language">
+                    <state key="normal" image="button-languages.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -91,6 +91,7 @@
         <image name="button-camera-roll.png" width="48" height="48"/>
         <image name="button-camera.png" width="48" height="48"/>
         <image name="button-done.png" width="48" height="48"/>
+        <image name="button-languages.png" width="109" height="12"/>
         <image name="logo-website.png" width="320" height="80"/>
     </resources>
 </document>
