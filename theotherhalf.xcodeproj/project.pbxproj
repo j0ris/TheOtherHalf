@@ -358,9 +358,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A92B329C18AAD3A9008B12D5 /* theotherhalf */ = {
+		A92B329C18AAD3A9008B12D5 /* TheOtherHalf */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A92B32CF18AAD3A9008B12D5 /* Build configuration list for PBXNativeTarget "theotherhalf" */;
+			buildConfigurationList = A92B32CF18AAD3A9008B12D5 /* Build configuration list for PBXNativeTarget "TheOtherHalf" */;
 			buildPhases = (
 				BA4E9470F1D842738613732C /* Check Pods Manifest.lock */,
 				A92B329918AAD3A9008B12D5 /* Sources */,
@@ -372,7 +372,7 @@
 			);
 			dependencies = (
 			);
-			name = theotherhalf;
+			name = TheOtherHalf;
 			productName = theotherhalf;
 			productReference = A92B329D18AAD3A9008B12D5 /* theotherhalf.app */;
 			productType = "com.apple.product-type.application";
@@ -402,7 +402,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A92B329C18AAD3A9008B12D5 /* theotherhalf */,
+				A92B329C18AAD3A9008B12D5 /* TheOtherHalf */,
 			);
 		};
 /* End PBXProject section */
@@ -643,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A92B32CF18AAD3A9008B12D5 /* Build configuration list for PBXNativeTarget "theotherhalf" */ = {
+		A92B32CF18AAD3A9008B12D5 /* Build configuration list for PBXNativeTarget "TheOtherHalf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A92B32D018AAD3A9008B12D5 /* Debug */,
