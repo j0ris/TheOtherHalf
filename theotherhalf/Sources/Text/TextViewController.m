@@ -21,6 +21,8 @@
 {
     [super viewDidLoad];
 
+	[self.webView fadeTop:0.1 bottom:0.1];
+	
 	NSString *htmlFileName = [NSString stringWithFormat:@"presentation-%@", [NSBundle localization]];
 	NSString *htmlFile = [[NSBundle mainBundle] pathForResource:htmlFileName ofType:@"html"];
 	NSString *htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
