@@ -65,6 +65,11 @@
 
 #pragma mark Actions
 
+- (IBAction)goToWebSite:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.theotherhalf.ch"]];
+}
+
 - (IBAction)changeLanguage:(id)sender
 {
     [self.stackController popToRootViewControllerAnimated:YES];

@@ -48,6 +48,17 @@
                         <action selector="choosePhoto:" destination="-1" eventType="touchUpInside" id="ddj-iz-7HT"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu">
+                    <rect key="frame" x="0.0" y="22" width="320" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="logo-website.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="goToWebSite:" destination="-1" eventType="touchUpInside" id="zvQ-Xd-cXz"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-mz-Gri" userLabel="Language Button">
                     <rect key="frame" x="20" y="7" width="68" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -67,5 +78,6 @@
     <resources>
         <image name="button-camera-roll.png" width="48" height="48"/>
         <image name="button-camera.png" width="48" height="48"/>
+        <image name="logo-website.png" width="320" height="80"/>
     </resources>
 </document>
