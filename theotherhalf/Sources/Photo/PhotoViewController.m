@@ -13,21 +13,12 @@
 @property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
 @property (nonatomic, weak) IBOutlet UIButton *choosePhotoButton;
-@property (nonatomic, retain) UIImage *maskImage;
 
 @end
 
 // TODO: Move and scale the image layer with user interactions to let the user adjust the photo within the masked area
 
 @implementation PhotoViewController
-
-- (id)initWithLocalization:(NSString *)localization;
-{
-	self = [super init];
-	NSString *maskName = [NSString stringWithFormat:@"mask-%@.png", (localization)?localization:@"en"];
-	self.maskImage = [UIImage imageNamed:maskName];
-	return  self;
-}
 
 #pragma mark View lifecycle
 
@@ -45,9 +36,11 @@
     self.photoImageView.image = [UIImage imageWithColor:[UIColor colorWithNonNormalizedRed:38.f green:41.f blue:39.f alpha:1.f]];
     
     // Mask
+	NSString *maskName = [NSString stringWithFormat:@"mask-%@.png", [NSBundle localization]];
+	UIImage *maskImage = [UIImage imageNamed:maskName];
     CALayer *maskLayer = [CALayer layer];
     maskLayer.frame = self.photoImageView.bounds;
-    maskLayer.contents = (id)self.maskImage.CGImage;
+    maskLayer.contents = (id)maskImage.CGImage;
     self.photoImageView.layer.mask = maskLayer;
 }
 
