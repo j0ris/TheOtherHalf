@@ -85,4 +85,8 @@
     [self displayImagePickerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
+- (IBAction)validate:(id)sender
+{
+}
+
 @end

@@ -27,7 +27,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-Hj-80y" userLabel="Take Photo Button">
-                    <rect key="frame" x="88" y="482" width="48" height="48"/>
+                    <rect key="frame" x="58" y="482" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" image="button-camera.png">
@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqJ-tY-czT" userLabel="Choose Photo Button">
-                    <rect key="frame" x="184" y="482" width="48" height="48"/>
+                    <rect key="frame" x="136" y="482" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" image="button-camera-roll.png">
@@ -46,6 +46,18 @@
                     </state>
                     <connections>
                         <action selector="choosePhoto:" destination="-1" eventType="touchUpInside" id="ddj-iz-7HT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-w9-lz9" userLabel="Choose Photo Button">
+                    <rect key="frame" x="214" y="482" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="button-done.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="choosePhoto:" destination="-1" eventType="touchUpInside" id="kja-Sb-TQK"/>
+                        <action selector="validate:" destination="-1" eventType="touchUpInside" id="k3V-8F-qHo"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu">
@@ -78,6 +90,7 @@
     <resources>
         <image name="button-camera-roll.png" width="48" height="48"/>
         <image name="button-camera.png" width="48" height="48"/>
+        <image name="button-done.png" width="48" height="48"/>
         <image name="logo-website.png" width="320" height="80"/>
     </resources>
 </document>

@@ -38,6 +38,8 @@
 		A98BA2AD18AD6A31000E0631 /* presentation-fr.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A818AD6A31000E0631 /* presentation-fr.html */; };
 		A98BA2AE18AD6A31000E0631 /* presentation-it.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A918AD6A31000E0631 /* presentation-it.html */; };
 		A98BA2AF18AD6A31000E0631 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2AA18AD6A31000E0631 /* style.css */; };
+		A98BA2B618AD89C9000E0631 /* button-done.png in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2B218AD89C9000E0631 /* button-done.png */; };
+		A98BA2B718AD89C9000E0631 /* button-done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2B318AD89C9000E0631 /* button-done@2x.png */; };
 		A9FE618818ACEE2B00D48FF9 /* button-camera-roll.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FE616C18ACEE2B00D48FF9 /* button-camera-roll.png */; };
 		A9FE618918ACEE2B00D48FF9 /* button-camera-roll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FE616D18ACEE2B00D48FF9 /* button-camera-roll@2x.png */; };
 		A9FE618A18ACEE2B00D48FF9 /* button-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FE616E18ACEE2B00D48FF9 /* button-camera.png */; };
@@ -112,6 +114,8 @@
 		A98BA2A818AD6A31000E0631 /* presentation-fr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-fr.html"; sourceTree = "<group>"; };
 		A98BA2A918AD6A31000E0631 /* presentation-it.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-it.html"; sourceTree = "<group>"; };
 		A98BA2AA18AD6A31000E0631 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		A98BA2B218AD89C9000E0631 /* button-done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done.png"; sourceTree = "<group>"; };
+		A98BA2B318AD89C9000E0631 /* button-done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done@2x.png"; sourceTree = "<group>"; };
 		A9FE616C18ACEE2B00D48FF9 /* button-camera-roll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-camera-roll.png"; sourceTree = "<group>"; };
 		A9FE616D18ACEE2B00D48FF9 /* button-camera-roll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-camera-roll@2x.png"; sourceTree = "<group>"; };
 		A9FE616E18ACEE2B00D48FF9 /* button-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-camera.png"; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				A9FE616D18ACEE2B00D48FF9 /* button-camera-roll@2x.png */,
 				A9FE616E18ACEE2B00D48FF9 /* button-camera.png */,
 				A9FE616F18ACEE2B00D48FF9 /* button-camera@2x.png */,
+				A98BA2B218AD89C9000E0631 /* button-done.png */,
+				A98BA2B318AD89C9000E0631 /* button-done@2x.png */,
 				A9FE617018ACEE2B00D48FF9 /* button-facebook.png */,
 				A9FE617118ACEE2B00D48FF9 /* button-facebook@2x.png */,
 				A9FE617218ACEE2B00D48FF9 /* button-twitter.png */,
@@ -413,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FF9146318ABF92100E9612E /* Localizable.strings in Resources */,
+				A98BA2B718AD89C9000E0631 /* button-done@2x.png in Resources */,
 				A9FE619E18ACEE2B00D48FF9 /* mask-overlay-en.png in Resources */,
 				A98BA2AB18AD6A31000E0631 /* presentation-de.html in Resources */,
 				A9FE619F18ACEE2B00D48FF9 /* mask-overlay-en@2x.png in Resources */,
@@ -440,6 +447,7 @@
 				A9FE619818ACEE2B00D48FF9 /* mask-fr.png in Resources */,
 				A9FE619018ACEE2B00D48FF9 /* logo-intro.png in Resources */,
 				A9FE619B18ACEE2B00D48FF9 /* mask-it@2x.png in Resources */,
+				A98BA2B618AD89C9000E0631 /* button-done.png in Resources */,
 				A9FE619618ACEE2B00D48FF9 /* mask-en.png in Resources */,
 				6FFDF2A118ABF61500919C19 /* LanguageViewController.xib in Resources */,
 				A9FE61A318ACEE2B00D48FF9 /* mask-overlay-it@2x.png in Resources */,
