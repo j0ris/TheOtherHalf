@@ -9,6 +9,7 @@
 #import "TheOtherHalfApplication.h"
 
 #import "LanguageViewController.h"
+#import "TextViewController.h"
 #import "PhotoViewController.h"
 
 static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen";
@@ -49,15 +50,26 @@ static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen
     return self.stackController;
 }
 
-- (void)displayPhotoViewWithLocalization:(NSString *)localization
+- (void)setLocalization:(NSString *)localization
 {
-    NSAssert([[[NSBundle mainBundle] localizations] indexOfObject:localization] != NSNotFound, @"Localization must be found in the main bundle");
+	NSAssert([[[NSBundle mainBundle] localizations] indexOfObject:localization] != NSNotFound, @"Localization must be found in the main bundle");
     [NSBundle setLocalization:localization];
     
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
     [standardUserDefaults setObject:@YES forKey:LocalizationChosenUserDefaultsKey];
     [standardUserDefaults synchronize];
-    
+	
+	[self displayTextView];
+}
+
+- (void)displayTextView
+{
+    TextViewController *textViewController = [[TextViewController alloc] init];
+    [self.stackController pushViewController:textViewController withTransitionClass:[HLSTransitionFlowFromRight class] animated:YES];
+}
+
+- (void)displayPhotoView
+{
     PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
     [self.stackController pushViewController:photoViewController withTransitionClass:[HLSTransitionFlowFromRight class] animated:YES];
 }

@@ -67,7 +67,7 @@
 
 - (IBAction)changeLanguage:(id)sender
 {
-    [self.stackController popViewControllerAnimated:YES];
+    [self.stackController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)takePhoto:(id)sender

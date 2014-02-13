@@ -19,8 +19,14 @@
 @property (nonatomic, strong) UIViewController *rootViewController;
 
 /**
- * Display the photo screen. The localization is mandatory
+ * Set the localization
  */
-- (void)displayPhotoViewWithLocalization:(NSString *)localization;
+- (void)setLocalization:(NSString *)localization;
+
+/**
+ * Display the photo view
+ */
+
+- (void)displayPhotoView;
 
 @end

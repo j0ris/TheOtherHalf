@@ -16,22 +16,22 @@
 
 - (IBAction)setGerman:(id)sender
 {
-    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"de"];
+    [[TheOtherHalfApplication sharedApplication] setLocalization:@"de"];
 }
 
 - (IBAction)setFrench:(id)sender
 {
-    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"fr"];
+    [[TheOtherHalfApplication sharedApplication] setLocalization:@"fr"];
 }
 
 - (IBAction)setItalian:(id)sender
 {
-    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"it"];
+    [[TheOtherHalfApplication sharedApplication] setLocalization:@"it"];
 }
 
 - (IBAction)setEnglish:(id)sender
 {
-    [[TheOtherHalfApplication sharedApplication] displayPhotoViewWithLocalization:@"en"];
+    [[TheOtherHalfApplication sharedApplication] setLocalization:@"en"];
 }
 
 @end

@@ -31,6 +31,8 @@
 		A92B32A118AAD3A9008B12D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A018AAD3A9008B12D5 /* Foundation.framework */; };
 		A92B32A318AAD3A9008B12D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */; };
 		A92B32A518AAD3A9008B12D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A418AAD3A9008B12D5 /* UIKit.framework */; };
+		A98BA29618AD6044000E0631 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98BA29418AD6044000E0631 /* TextViewController.m */; };
+		A98BA29718AD6044000E0631 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98BA29518AD6044000E0631 /* TextViewController.xib */; };
 		A98BA2AB18AD6A31000E0631 /* presentation-de.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A618AD6A31000E0631 /* presentation-de.html */; };
 		A98BA2AC18AD6A31000E0631 /* presentation-en.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A718AD6A31000E0631 /* presentation-en.html */; };
 		A98BA2AD18AD6A31000E0631 /* presentation-fr.html in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2A818AD6A31000E0631 /* presentation-fr.html */; };
@@ -102,6 +104,9 @@
 		A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A92B32A418AAD3A9008B12D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A92B32BF18AAD3A9008B12D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A98BA29318AD6044000E0631 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		A98BA29418AD6044000E0631 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		A98BA29518AD6044000E0631 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 		A98BA2A618AD6A31000E0631 /* presentation-de.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-de.html"; sourceTree = "<group>"; };
 		A98BA2A718AD6A31000E0631 /* presentation-en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-en.html"; sourceTree = "<group>"; };
 		A98BA2A818AD6A31000E0631 /* presentation-fr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "presentation-fr.html"; sourceTree = "<group>"; };
@@ -239,6 +244,7 @@
 				6FFDF29218ABF61500919C19 /* AppDelegate */,
 				6F66601318ABFF8100D71A40 /* Application */,
 				6FFDF29518ABF61500919C19 /* Language */,
+				A98BA29218AD6031000E0631 /* Text */,
 				6FFDF29A18ABF61500919C19 /* Photo */,
 				6FFDF29918ABF61500919C19 /* main.m */,
 				6FFDF29E18ABF61500919C19 /* theotherhalf-Prefix.pch */,
@@ -325,6 +331,16 @@
 				C086F71907124F39AFF01831 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A98BA29218AD6031000E0631 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				A98BA29318AD6044000E0631 /* TextViewController.h */,
+				A98BA29418AD6044000E0631 /* TextViewController.m */,
+				A98BA29518AD6044000E0631 /* TextViewController.xib */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 		A98BA2A518AD6A31000E0631 /* html */ = {
@@ -427,6 +443,7 @@
 				A9FE619618ACEE2B00D48FF9 /* mask-en.png in Resources */,
 				6FFDF2A118ABF61500919C19 /* LanguageViewController.xib in Resources */,
 				A9FE61A318ACEE2B00D48FF9 /* mask-overlay-it@2x.png in Resources */,
+				A98BA29718AD6044000E0631 /* TextViewController.xib in Resources */,
 				A9FE619418ACEE2B00D48FF9 /* mask-de.png in Resources */,
 				A9FE618C18ACEE2B00D48FF9 /* button-facebook.png in Resources */,
 				A9FE619C18ACEE2B00D48FF9 /* mask-overlay-de.png in Resources */,
@@ -481,6 +498,7 @@
 			files = (
 				6F66601618ABFF9400D71A40 /* TheOtherHalfApplication.m in Sources */,
 				6FFDF29F18ABF61500919C19 /* AppDelegate.m in Sources */,
+				A98BA29618AD6044000E0631 /* TextViewController.m in Sources */,
 				6FFDF2A018ABF61500919C19 /* LanguageViewController.m in Sources */,
 				6FFDF2A218ABF61500919C19 /* main.m in Sources */,
 				6FFDF28218ABF39800919C19 /* CoconutKit_bootstrap.m in Sources */,
