@@ -8,4 +8,6 @@
 
 @interface PhotoViewController : HLSViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+- (id)initWithLocalization:(NSString *)localization;
+
 @end

@@ -58,7 +58,7 @@ static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen
     [standardUserDefaults setObject:@YES forKey:LocalizationChosenUserDefaultsKey];
     [standardUserDefaults synchronize];
     
-    PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
+    PhotoViewController *photoViewController = [[PhotoViewController alloc] initWithLocalization:localization];
     [self.stackController pushViewController:photoViewController withTransitionClass:[HLSTransitionFlowFromRight class] animated:YES];
 }
 
