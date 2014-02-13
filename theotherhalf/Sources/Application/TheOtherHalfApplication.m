@@ -41,11 +41,6 @@ static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen
     if (! self.stackController) {
         LanguageViewController *languageViewController = [[LanguageViewController alloc] init];
         self.stackController = [[HLSStackController alloc] initWithRootViewController:languageViewController];
-        
-        // Localization already chosen once. Display photo screen directly
-        if ([[[NSUserDefaults standardUserDefaults] objectForKey:LocalizationChosenUserDefaultsKey] boolValue]) {
-            [self displayPhotoViewWithLocalization:[NSBundle localization]];
-        }
     }
     return self.stackController;
 }
