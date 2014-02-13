@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3BA81F950B9F488597BF498A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C086F71907124F39AFF01831 /* libPods.a */; };
+		6F5B18EE18AC93F800791960 /* mask-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B18EC18AC93F800791960 /* mask-photo.png */; };
+		6F5B18EF18AC93F800791960 /* mask-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B18ED18AC93F800791960 /* mask-photo@2x.png */; };
 		6F66601618ABFF9400D71A40 /* TheOtherHalfApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F66601518ABFF9400D71A40 /* TheOtherHalfApplication.m */; };
 		6FF9146318ABF92100E9612E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FF9145E18ABF92100E9612E /* Localizable.strings */; };
 		6FFDF28218ABF39800919C19 /* CoconutKit_bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDF27F18ABF39800919C19 /* CoconutKit_bootstrap.m */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F5B18EC18AC93F800791960 /* mask-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask-photo.png"; sourceTree = "<group>"; };
+		6F5B18ED18AC93F800791960 /* mask-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask-photo@2x.png"; sourceTree = "<group>"; };
 		6F66601418ABFF9400D71A40 /* TheOtherHalfApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheOtherHalfApplication.h; sourceTree = "<group>"; };
 		6F66601518ABFF9400D71A40 /* TheOtherHalfApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheOtherHalfApplication.m; sourceTree = "<group>"; };
 		6FF9145F18ABF92100E9612E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F5B18EB18AC93F800791960 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B18EC18AC93F800791960 /* mask-photo.png */,
+				6F5B18ED18AC93F800791960 /* mask-photo@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		6F66601318ABFF8100D71A40 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +185,7 @@
 		6FFDF2A518ABF68D00919C19 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6F5B18EB18AC93F800791960 /* Images */,
 				6FF9145E18ABF92100E9612E /* Localizable.strings */,
 				6FFDF2A618ABF68D00919C19 /* Images.xcassets */,
 				6FFDF2A718ABF68D00919C19 /* theotherhalf-Info.plist */,
@@ -277,6 +291,8 @@
 			files = (
 				6FF9146318ABF92100E9612E /* Localizable.strings in Resources */,
 				6FFDF2A418ABF61500919C19 /* PhotoViewController.xib in Resources */,
+				6F5B18EE18AC93F800791960 /* mask-photo.png in Resources */,
+				6F5B18EF18AC93F800791960 /* mask-photo@2x.png in Resources */,
 				6FFDF2A818ABF68D00919C19 /* Images.xcassets in Resources */,
 				6FFDF2A118ABF61500919C19 /* LanguageViewController.xib in Resources */,
 				6FFDF28318ABF39800919C19 /* CoconutKit-resources.bundle in Resources */,

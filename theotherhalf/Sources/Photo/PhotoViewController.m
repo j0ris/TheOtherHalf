@@ -16,6 +16,8 @@
 
 @end
 
+// TODO: Move and scale the image layer with user interactions to let the user adjust the photo within the masked area
+
 @implementation PhotoViewController
 
 #pragma mark View lifecycle
@@ -30,6 +32,15 @@
     if (! [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         self.choosePhotoButton.hidden = YES;
     }
+    
+    self.photoImageView.image = [UIImage imageWithColor:[UIColor colorWithNonNormalizedRed:38.f green:41.f blue:39.f alpha:1.f]];
+    
+    // Mask
+    UIImage *maskImage = [UIImage imageNamed:@"mask-photo.png"];
+    CALayer *maskLayer = [CALayer layer];
+    maskLayer.frame = self.photoImageView.bounds;
+    maskLayer.contents = (id)maskImage.CGImage;
+    self.photoImageView.layer.mask = maskLayer;
 }
 
 #pragma mark Helpers
