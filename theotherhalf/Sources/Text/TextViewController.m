@@ -21,16 +21,13 @@
 {
     [super viewDidLoad];
 
+    [self.webView makeBackgroundTransparent];
+    self.webView.shadowHidden = YES;
 	[self.webView fadeTop:0.1 bottom:0.1];
 	
-	NSString *htmlFileName = [NSString stringWithFormat:@"presentation-%@", [NSBundle localization]];
-	NSString *htmlFile = [[NSBundle mainBundle] pathForResource:htmlFileName ofType:@"html"];
+	NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"presentation" ofType:@"html"];
 	NSString *htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-	
-	NSString *path = [[NSBundle mainBundle] bundlePath];
-	NSURL *baseURL = [NSURL fileURLWithPath:path];
-
-	[self.webView loadHTMLString:htmlString baseURL:baseURL];
+	[self.webView loadHTMLString:htmlString baseURL:[[NSBundle mainBundle] bundleURL]];
 }
 
 - (IBAction)close:(id)sender
