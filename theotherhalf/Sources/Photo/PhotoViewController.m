@@ -42,6 +42,17 @@
     maskLayer.frame = self.photoImageView.bounds;
     maskLayer.contents = (id)maskImage.CGImage;
     self.photoImageView.layer.mask = maskLayer;
+    
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panImage:)];
+    [self.photoImageView addGestureRecognizer:panGestureRecognizer];
+    
+    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
+    [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
+    
+    UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
+    [self.photoImageView addGestureRecognizer:rotationGestureRecognizer];
+    
+    self.photoImageView.userInteractionEnabled = YES;
 }
 
 #pragma mark Helpers
@@ -87,6 +98,23 @@
 
 - (IBAction)validate:(id)sender
 {
+}
+
+#pragma mark Gesture recognizers
+
+- (void)panImage:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    NSLog(@"Pan");
+}
+
+- (void)pinchImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+{
+    NSLog(@"Pinch");
+}
+
+- (void)rotateImage:(UIRotationGestureRecognizer *)rotationGestureRecognizer
+{
+    NSLog(@"Rotate");
 }
 
 @end
