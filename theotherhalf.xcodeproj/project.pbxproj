@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3BA81F950B9F488597BF498A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C086F71907124F39AFF01831 /* libPods.a */; };
-		6F5B18EE18AC93F800791960 /* mask-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B18EC18AC93F800791960 /* mask-photo.png */; };
-		6F5B18EF18AC93F800791960 /* mask-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B18ED18AC93F800791960 /* mask-photo@2x.png */; };
 		6F66601618ABFF9400D71A40 /* TheOtherHalfApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F66601518ABFF9400D71A40 /* TheOtherHalfApplication.m */; };
 		6FD26F5A18AE712A007CD4A3 /* presentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 6FD26F5518AE712A007CD4A3 /* presentation.html */; };
 		6FD26F5E18AE71EF007CD4A3 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6FD26F5D18AE71EF007CD4A3 /* style.css */; };
@@ -72,8 +70,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6F5B18EC18AC93F800791960 /* mask-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask-photo.png"; sourceTree = "<group>"; };
-		6F5B18ED18AC93F800791960 /* mask-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask-photo@2x.png"; sourceTree = "<group>"; };
 		6F66601418ABFF9400D71A40 /* TheOtherHalfApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheOtherHalfApplication.h; sourceTree = "<group>"; };
 		6F66601518ABFF9400D71A40 /* TheOtherHalfApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheOtherHalfApplication.m; sourceTree = "<group>"; };
 		6FD26F5618AE712A007CD4A3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/presentation.html; sourceTree = "<group>"; };
@@ -211,8 +207,6 @@
 				A9FE618518ACEE2B00D48FF9 /* mask-overlay-fr@2x.png */,
 				A9FE618618ACEE2B00D48FF9 /* mask-overlay-it.png */,
 				A9FE618718ACEE2B00D48FF9 /* mask-overlay-it@2x.png */,
-				6F5B18EC18AC93F800791960 /* mask-photo.png */,
-				6F5B18ED18AC93F800791960 /* mask-photo@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -439,8 +433,6 @@
 				A9FE619518ACEE2B00D48FF9 /* mask-de@2x.png in Resources */,
 				A98BA2BB18AD89D8000E0631 /* button-languages@2x.png in Resources */,
 				A9FE618A18ACEE2B00D48FF9 /* button-camera.png in Resources */,
-				6F5B18EE18AC93F800791960 /* mask-photo.png in Resources */,
-				6F5B18EF18AC93F800791960 /* mask-photo@2x.png in Resources */,
 				6FFDF2A818ABF68D00919C19 /* Images.xcassets in Resources */,
 				A9FE618D18ACEE2B00D48FF9 /* button-facebook@2x.png in Resources */,
 				A9FE619818ACEE2B00D48FF9 /* mask-fr.png in Resources */,
