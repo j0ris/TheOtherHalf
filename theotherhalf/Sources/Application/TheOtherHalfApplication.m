@@ -12,8 +12,6 @@
 #import "TextViewController.h"
 #import "PhotoViewController.h"
 
-static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen";
-
 @interface TheOtherHalfApplication ()
 
 @property (nonatomic, strong) HLSStackController *stackController;
@@ -41,6 +39,8 @@ static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen
     if (! self.stackController) {
         LanguageViewController *languageViewController = [[LanguageViewController alloc] init];
         self.stackController = [[HLSStackController alloc] initWithRootViewController:languageViewController];
+        
+        [self displayTextView];
     }
     return self.stackController;
 }
@@ -49,10 +49,6 @@ static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen
 {
 	NSAssert([[[NSBundle mainBundle] localizations] indexOfObject:localization] != NSNotFound, @"Localization must be found in the main bundle");
     [NSBundle setLocalization:localization];
-    
-    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    [standardUserDefaults setObject:@YES forKey:LocalizationChosenUserDefaultsKey];
-    [standardUserDefaults synchronize];
 	
 	[self displayTextView];
 }
@@ -60,13 +56,13 @@ static NSString * const LocalizationChosenUserDefaultsKey = @"LocalizationChosen
 - (void)displayTextView
 {
     TextViewController *textViewController = [[TextViewController alloc] init];
-    [self.stackController pushViewController:textViewController withTransitionClass:[HLSTransitionFlowFromRight class] animated:YES];
+    [self.stackController pushViewController:textViewController withTransitionClass:[HLSTransitionPushFromRight class] animated:YES];
 }
 
 - (void)displayPhotoView
 {
     PhotoViewController *photoViewController = [[PhotoViewController alloc] init];
-    [self.stackController pushViewController:photoViewController withTransitionClass:[HLSTransitionFlowFromRight class] animated:YES];
+    [self.stackController pushViewController:photoViewController withTransitionClass:[HLSTransitionPushFromRight class] animated:YES];
 }
 
 @end
