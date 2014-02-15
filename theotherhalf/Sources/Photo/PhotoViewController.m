@@ -17,7 +17,10 @@
 @end
 
 @implementation PhotoViewController {
-    CATransform3D _initialTransform;
+    CATransform3D _initialTransform;                    // Initial transform when a gesture begins
+    CGPoint _currentTranslation;
+    CGFloat _currentScale;
+    CGFloat _currentRotation;
 }
 
 #pragma mark View lifecycle
@@ -70,11 +73,33 @@
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
+- (void)updateImage
+{
+    CATransform3D currentTranslationTransform = CATransform3DMakeTranslation(_currentTranslation.x, _currentTranslation.y, 0.f);
+    CATransform3D currentScaleTransform = CATransform3DMakeScale(_currentScale, _currentScale, 1.f);
+    CATransform3D currentRotationTransform = CATransform3DMakeRotation(_currentRotation, 0.f, 0.f, 1.f);
+    
+    CATransform3D currentTransform = CATransform3DConcat(currentRotationTransform, currentScaleTransform);
+    currentTransform = CATransform3DConcat(currentTranslationTransform, currentTransform);
+    self.photoImageView.layer.transform = CATransform3DConcat(currentTransform, _initialTransform);
+}
+
 #pragma mark UIGestureRecognizerDelegate protocol implementation
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     _initialTransform = self.photoImageView.layer.transform;
+    
+    _currentTranslation = CGPointZero;
+    _currentScale = 1.f;
+    _currentRotation = 0.f;
+    
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    // It is much more intuitive to be able to rotate and scale simultaneously
     return YES;
 }
 
@@ -82,7 +107,6 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    // TODO: Resize & mask
     self.photoImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -117,24 +141,20 @@
 
 - (void)panImage:(UIPanGestureRecognizer *)panGestureRecognizer
 {
-    CGPoint translation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
-    CATransform3D transform = CATransform3DMakeTranslation(translation.x, translation.y, 0.f);
-    self.photoImageView.layer.transform = CATransform3DConcat(transform, _initialTransform);
+    _currentTranslation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
+    [self updateImage];
 }
 
 - (void)pinchImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
-    CGFloat scale = pinchGestureRecognizer.scale;
-    CATransform3D transform = CATransform3DMakeScale(scale, scale, 1.f);
-    self.photoImageView.layer.transform = CATransform3DConcat(transform, _initialTransform);
+    _currentScale = pinchGestureRecognizer.scale;
+    [self updateImage];
 }
 
 - (void)rotateImage:(UIRotationGestureRecognizer *)rotationGestureRecognizer
 {
-
-    CGFloat rotation = rotationGestureRecognizer.rotation;
-    CATransform3D transform = CATransform3DMakeRotation(rotation, 0.f, 0.f, 1.f);
-    self.photoImageView.layer.transform = CATransform3DConcat(transform, _initialTransform);
+    _currentRotation = rotationGestureRecognizer.rotation;
+    [self updateImage];
 }
 
 @end
