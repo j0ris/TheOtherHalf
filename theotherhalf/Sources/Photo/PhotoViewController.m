@@ -113,6 +113,7 @@
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.imageSublayer.contents = (__bridge id)image.CGImage;
+    self.imageSublayer.transform = CATransform3DIdentity;
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
