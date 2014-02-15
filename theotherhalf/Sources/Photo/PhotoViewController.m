@@ -16,9 +16,9 @@
 
 @end
 
-// TODO: Move and scale the image layer with user interactions to let the user adjust the photo within the masked area
-
-@implementation PhotoViewController
+@implementation PhotoViewController {
+    CATransform3D _initialTransform;
+}
 
 #pragma mark View lifecycle
 
@@ -43,13 +43,18 @@
     maskLayer.contents = (id)maskImage.CGImage;
     self.photoImageView.layer.mask = maskLayer;
     
+    self.photoImageView.image = [UIImage imageWithColor:[UIColor redColor]];
+    
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panImage:)];
+    panGestureRecognizer.delegate = self;
     [self.photoImageView addGestureRecognizer:panGestureRecognizer];
     
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
+    pinchGestureRecognizer.delegate = self;
     [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
     
     UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
+    rotationGestureRecognizer.delegate = self;
     [self.photoImageView addGestureRecognizer:rotationGestureRecognizer];
     
     self.photoImageView.userInteractionEnabled = YES;
@@ -63,6 +68,14 @@
     imagePickerController.sourceType = sourceType;
     imagePickerController.delegate = self;
     [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+#pragma mark UIGestureRecognizerDelegate protocol implementation
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    _initialTransform = self.photoImageView.layer.transform;
+    return YES;
 }
 
 #pragma mark UIImagePickerControllerDelegate protocol implementation
@@ -104,17 +117,24 @@
 
 - (void)panImage:(UIPanGestureRecognizer *)panGestureRecognizer
 {
-    NSLog(@"Pan");
+    CGPoint translation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
+    CATransform3D transform = CATransform3DMakeTranslation(translation.x, translation.y, 0.f);
+    self.photoImageView.layer.transform = CATransform3DConcat(transform, _initialTransform);
 }
 
 - (void)pinchImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
-    NSLog(@"Pinch");
+    CGFloat scale = pinchGestureRecognizer.scale;
+    CATransform3D transform = CATransform3DMakeScale(scale, scale, 1.f);
+    self.photoImageView.layer.transform = CATransform3DConcat(transform, _initialTransform);
 }
 
 - (void)rotateImage:(UIRotationGestureRecognizer *)rotationGestureRecognizer
 {
-    NSLog(@"Rotate");
+
+    CGFloat rotation = rotationGestureRecognizer.rotation;
+    CATransform3D transform = CATransform3DMakeRotation(rotation, 0.f, 0.f, 1.f);
+    self.photoImageView.layer.transform = CATransform3DConcat(transform, _initialTransform);
 }
 
 @end
