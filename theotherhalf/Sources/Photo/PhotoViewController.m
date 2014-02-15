@@ -10,9 +10,11 @@
 
 @interface PhotoViewController ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
+@property (nonatomic, weak) IBOutlet UIView *photoView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
 @property (nonatomic, weak) IBOutlet UIButton *choosePhotoButton;
+
+@property (nonatomic, weak) CALayer *imageSublayer;
 
 @end
 
@@ -36,31 +38,33 @@
         self.choosePhotoButton.hidden = YES;
     }
     
-    self.photoImageView.image = [UIImage imageWithColor:[UIColor colorWithNonNormalizedRed:38.f green:41.f blue:39.f alpha:1.f]];
+    // Insert image as sublayer so that we can move and scale it while the main parent view stays the same
+    CALayer *imageSublayer = [CALayer layer];
+    imageSublayer.frame = self.photoView.bounds;
+    imageSublayer.contents = (__bridge id)[UIImage imageWithColor:[UIColor colorWithNonNormalizedRed:38.f green:41.f blue:39.f alpha:1.f]].CGImage;
+    [self.photoView.layer addSublayer:imageSublayer];
+    self.imageSublayer = imageSublayer;
     
-    // Mask
+    // Apply mask to the parent view
 	NSString *maskName = [NSString stringWithFormat:@"mask-%@.png", [NSBundle localization]];
 	UIImage *maskImage = [UIImage imageNamed:maskName];
     CALayer *maskLayer = [CALayer layer];
-    maskLayer.frame = self.photoImageView.bounds;
+    maskLayer.frame = self.photoView.bounds;
     maskLayer.contents = (id)maskImage.CGImage;
-    self.photoImageView.layer.mask = maskLayer;
+    self.photoView.layer.mask = maskLayer;
     
-    self.photoImageView.image = [UIImage imageWithColor:[UIColor redColor]];
-    
+    // Gesture recognizers. Meant to move the image sublayer
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panImage:)];
     panGestureRecognizer.delegate = self;
-    [self.photoImageView addGestureRecognizer:panGestureRecognizer];
+    [self.photoView addGestureRecognizer:panGestureRecognizer];
     
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
     pinchGestureRecognizer.delegate = self;
-    [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
+    [self.photoView addGestureRecognizer:pinchGestureRecognizer];
     
     UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
     rotationGestureRecognizer.delegate = self;
-    [self.photoImageView addGestureRecognizer:rotationGestureRecognizer];
-    
-    self.photoImageView.userInteractionEnabled = YES;
+    [self.photoView addGestureRecognizer:rotationGestureRecognizer];
 }
 
 #pragma mark Helpers
@@ -81,14 +85,14 @@
     
     CATransform3D currentTransform = CATransform3DConcat(currentRotationTransform, currentScaleTransform);
     currentTransform = CATransform3DConcat(currentTranslationTransform, currentTransform);
-    self.photoImageView.layer.transform = CATransform3DConcat(currentTransform, _initialTransform);
+    self.imageSublayer.transform = CATransform3DConcat(currentTransform, _initialTransform);
 }
 
 #pragma mark UIGestureRecognizerDelegate protocol implementation
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    _initialTransform = self.photoImageView.layer.transform;
+    _initialTransform = self.imageSublayer.transform;
     
     _currentTranslation = CGPointZero;
     _currentScale = 1.f;
@@ -107,7 +111,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    self.photoImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.imageSublayer.contents = (__bridge id)image.CGImage;
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
