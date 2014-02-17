@@ -31,6 +31,7 @@
 		A92B32A118AAD3A9008B12D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A018AAD3A9008B12D5 /* Foundation.framework */; };
 		A92B32A318AAD3A9008B12D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */; };
 		A92B32A518AAD3A9008B12D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92B32A418AAD3A9008B12D5 /* UIKit.framework */; };
+		A953FCAE18B2647C0017F89A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A953FCAD18B2647C0017F89A /* Social.framework */; };
 		A98BA29618AD6044000E0631 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98BA29418AD6044000E0631 /* TextViewController.m */; };
 		A98BA29718AD6044000E0631 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98BA29518AD6044000E0631 /* TextViewController.xib */; };
 		A98BA2B418AD89C9000E0631 /* button-close.png in Resources */ = {isa = PBXBuildFile; fileRef = A98BA2B018AD89C9000E0631 /* button-close.png */; };
@@ -108,6 +109,7 @@
 		A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A92B32A418AAD3A9008B12D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A92B32BF18AAD3A9008B12D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A953FCAD18B2647C0017F89A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A98BA29318AD6044000E0631 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		A98BA29418AD6044000E0631 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		A98BA29518AD6044000E0631 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A953FCAE18B2647C0017F89A /* Social.framework in Frameworks */,
 				6FFDF29018ABF3FB00919C19 /* QuickLook.framework in Frameworks */,
 				6FFDF28E18ABF3F500919C19 /* QuartzCore.framework in Frameworks */,
 				6FFDF28C18ABF3F000919C19 /* MobileCoreServices.framework in Frameworks */,
@@ -328,6 +331,7 @@
 		A92B329F18AAD3A9008B12D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A953FCAD18B2647C0017F89A /* Social.framework */,
 				6FFDF28518ABF3D900919C19 /* CoreData.framework */,
 				A92B32A218AAD3A9008B12D5 /* CoreGraphics.framework */,
 				6FFDF28718ABF3DE00919C19 /* CoreText.framework */,

@@ -7,6 +7,7 @@
 //
 
 #import "PhotoViewController.h"
+#import <Social/Social.h>
 
 CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 {
@@ -153,15 +154,7 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 	self.photoButtonsView.hidden = YES;
 }
 
-- (IBAction)shareOnFacebook:(id)sender
-{
-}
-
-- (IBAction)shareOnTwitter:(id)sender
-{
-}
-
-- (IBAction)saveToCameraRoll:(id)sender
+- (UIImage*)maskedImage
 {
 	// create a CG context
 	UIGraphicsBeginImageContextWithOptions(self.photoView.bounds.size, NO, [UIScreen mainScreen].scale);
@@ -173,7 +166,44 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 
-	UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+	return image;
+}
+
+- (IBAction)shareOnFacebook:(id)sender
+{
+	[self shareOnServiceType:SLServiceTypeFacebook];
+}
+
+- (IBAction)shareOnTwitter:(id)sender
+{
+	[self shareOnServiceType:SLServiceTypeTwitter];
+}
+
+- (void)shareOnServiceType:(NSString*)serviceType
+{
+	BOOL shouldComposeMessage = NO;
+	if ([SLComposeViewController isAvailableForServiceType:serviceType])
+	{
+		shouldComposeMessage = YES;
+	}
+	else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
+	{
+		shouldComposeMessage = YES;
+	}
+	
+	if(shouldComposeMessage)
+	{
+		SLComposeViewController *messageSheet = [SLComposeViewController composeViewControllerForServiceType:serviceType];
+		[messageSheet setInitialText:NSLocalizedString(@"I am the other half.", @"Default message content for sharing")];
+		[messageSheet addImage:[self maskedImage]];
+		[messageSheet addURL:[NSURL URLWithString:@"http://theotherhalf.ch"]];
+		[self presentViewController:messageSheet animated:YES completion:nil];
+	}
+}
+
+- (IBAction)saveToCameraRoll:(id)sender
+{
+	UIImageWriteToSavedPhotosAlbum([self maskedImage], nil, nil, nil);
 }
 
 #pragma mark Gesture recognizers
