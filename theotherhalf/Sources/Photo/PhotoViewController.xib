@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoViewController">
             <connections>
                 <outlet property="choosePhotoButton" destination="OqJ-tY-czT" id="Vmr-UF-NIA"/>
-                <outlet property="photoImageView" destination="PK0-gN-fq7" id="xuo-gh-Qye"/>
+                <outlet property="photoView" destination="TfC-Go-svY" id="1z0-01-JZH"/>
                 <outlet property="takePhotoButton" destination="5sa-Hj-80y" id="fOy-JV-f6i"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -17,15 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brb-QM-ljC" userLabel="Photo Background View">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfC-Go-svY" userLabel="Photo View">
                     <rect key="frame" x="0.0" y="124" width="320" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PK0-gN-fq7">
-                    <rect key="frame" x="0.0" y="124" width="320" height="320"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sa-Hj-80y" userLabel="Take Photo Button">
                     <rect key="frame" x="136" y="482" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
