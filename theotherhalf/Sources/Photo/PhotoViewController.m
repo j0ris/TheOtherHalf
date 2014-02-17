@@ -15,9 +15,12 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 
 @interface PhotoViewController ()
 
+@property (nonatomic, weak) IBOutlet UIView *buttonsPlaceholderView;
 @property (nonatomic, weak) IBOutlet UIView *photoView;
+@property (nonatomic, weak) IBOutlet UIView *photoButtonsView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
 @property (nonatomic, weak) IBOutlet UIButton *choosePhotoButton;
+@property (nonatomic, weak) IBOutlet UIView *sharingButtonsView;
 
 @property (nonatomic, weak) CALayer *imageSublayer;
 
@@ -65,6 +68,11 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
     pinchGestureRecognizer.delegate = self;
     [self.photoView addGestureRecognizer:pinchGestureRecognizer];
+	
+	// Action buttons
+	[self.buttonsPlaceholderView addSubview:self.photoButtonsView];
+	[self.buttonsPlaceholderView addSubview:self.sharingButtonsView];
+	self.sharingButtonsView.hidden = YES;
 }
 
 #pragma mark Helpers
@@ -141,6 +149,31 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 
 - (IBAction)validate:(id)sender
 {
+	self.sharingButtonsView.hidden = NO;
+	self.photoButtonsView.hidden = YES;
+}
+
+- (IBAction)shareOnFacebook:(id)sender
+{
+}
+
+- (IBAction)shareOnTwitter:(id)sender
+{
+}
+
+- (IBAction)saveToCameraRoll:(id)sender
+{
+	// create a CG context
+	UIGraphicsBeginImageContextWithOptions(self.photoView.bounds.size, NO, [UIScreen mainScreen].scale);
+	
+	// render into the new context
+	[self.photoView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	
+	// get the image out of the context
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+
+	UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 
 #pragma mark Gesture recognizers
