@@ -22,7 +22,6 @@
     CATransform3D _initialTransform;                    // Initial transform when a gesture begins
     CGPoint _currentTranslation;
     CGFloat _currentScale;
-    CGFloat _currentRotation;
 }
 
 #pragma mark View lifecycle
@@ -61,10 +60,6 @@
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
     pinchGestureRecognizer.delegate = self;
     [self.photoView addGestureRecognizer:pinchGestureRecognizer];
-    
-    UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
-    rotationGestureRecognizer.delegate = self;
-    [self.photoView addGestureRecognizer:rotationGestureRecognizer];
 }
 
 #pragma mark Helpers
@@ -81,11 +76,9 @@
 {
     CATransform3D currentTranslationTransform = CATransform3DMakeTranslation(_currentTranslation.x, _currentTranslation.y, 0.f);
     CATransform3D currentScaleTransform = CATransform3DMakeScale(_currentScale, _currentScale, 1.f);
-    CATransform3D currentRotationTransform = CATransform3DMakeRotation(_currentRotation, 0.f, 0.f, 1.f);
     
-    CATransform3D currentTransform = CATransform3DConcat(currentRotationTransform, currentScaleTransform);
-    currentTransform = CATransform3DConcat(currentTranslationTransform, currentTransform);
-    self.imageSublayer.transform = CATransform3DConcat(currentTransform, _initialTransform);
+    CATransform3D currentTransform = CATransform3DConcat(currentScaleTransform, currentTranslationTransform);
+    self.imageSublayer.transform = CATransform3DConcat(_initialTransform, currentTransform);
 }
 
 #pragma mark UIGestureRecognizerDelegate protocol implementation
@@ -96,14 +89,7 @@
     
     _currentTranslation = CGPointZero;
     _currentScale = 1.f;
-    _currentRotation = 0.f;
     
-    return YES;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    // It is much more intuitive to be able to rotate and scale simultaneously
     return YES;
 }
 
@@ -114,7 +100,7 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.imageSublayer.contents = (__bridge id)image.CGImage;
     self.imageSublayer.transform = CATransform3DIdentity;
-    
+        
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -155,12 +141,6 @@
 - (void)pinchImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
     _currentScale = pinchGestureRecognizer.scale;
-    [self updateImage];
-}
-
-- (void)rotateImage:(UIRotationGestureRecognizer *)rotationGestureRecognizer
-{
-    _currentRotation = rotationGestureRecognizer.rotation;
     [self updateImage];
 }
 
