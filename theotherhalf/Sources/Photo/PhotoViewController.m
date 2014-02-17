@@ -8,6 +8,11 @@
 
 #import "PhotoViewController.h"
 
+CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
+{
+	return CGRectOffset(rect, CGRectGetMidX(mainRect)-CGRectGetMidX(rect), CGRectGetMidY(mainRect)-CGRectGetMidY(rect));
+}
+
 @interface PhotoViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *photoView;
@@ -98,9 +103,17 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	
+	CGRect viewBounds = self.photoView.bounds;
+	CGSize imageSize = image.size;
+	CGFloat scale = (imageSize.height>imageSize.width) ? CGRectGetHeight(viewBounds)/imageSize.height : CGRectGetWidth(viewBounds)/imageSize.width;
+	CGRect frame = CGRectMake(0.0, 0.0, imageSize.width * scale, imageSize.height * scale);
+	frame = rectCenteredInRect(frame, viewBounds);
+	
+	self.imageSublayer.transform = CATransform3DIdentity;
+	self.imageSublayer.frame = frame;
     self.imageSublayer.contents = (__bridge id)image.CGImage;
-    self.imageSublayer.transform = CATransform3DIdentity;
-        
+	
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
