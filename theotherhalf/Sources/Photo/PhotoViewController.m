@@ -17,18 +17,16 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 @interface PhotoViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *buttonsPlaceholderView;
-@property (nonatomic, weak) IBOutlet UIView *photoView;
+@property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, weak) IBOutlet UIView *photoButtonsView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
 @property (nonatomic, weak) IBOutlet UIButton *choosePhotoButton;
 @property (nonatomic, weak) IBOutlet UIView *sharingButtonsView;
 
-@property (nonatomic, weak) CALayer *imageSublayer;
-
 @end
 
 @implementation PhotoViewController {
-    CATransform3D _initialTransform;                    // Initial transform when a gesture begins
+    CGAffineTransform _initialTransform;                    // Initial transform when a gesture begins
     CGPoint _currentTranslation;
     CGFloat _currentScale;
 }
@@ -46,29 +44,16 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
         self.choosePhotoButton.hidden = YES;
     }
     
-    // Insert image as sublayer so that we can move and scale it while the main parent view stays the same
-    CALayer *imageSublayer = [CALayer layer];
-    imageSublayer.frame = self.photoView.bounds;
-    imageSublayer.contents = (__bridge id)[UIImage imageWithColor:[UIColor colorWithNonNormalizedRed:38.f green:41.f blue:39.f alpha:1.f]].CGImage;
-    [self.photoView.layer addSublayer:imageSublayer];
-    self.imageSublayer = imageSublayer;
-    
-    // Apply mask to the parent view
-	NSString *maskName = [NSString stringWithFormat:@"mask-%@.png", [NSBundle localization]];
-	UIImage *maskImage = [UIImage imageNamed:maskName];
-    CALayer *maskLayer = [CALayer layer];
-    maskLayer.frame = self.photoView.bounds;
-    maskLayer.contents = (id)maskImage.CGImage;
-    self.photoView.layer.mask = maskLayer;
-    
     // Gesture recognizers. Meant to move the image sublayer
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panImage:)];
     panGestureRecognizer.delegate = self;
-    [self.photoView addGestureRecognizer:panGestureRecognizer];
+    [self.photoImageView addGestureRecognizer:panGestureRecognizer];
     
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
     pinchGestureRecognizer.delegate = self;
-    [self.photoView addGestureRecognizer:pinchGestureRecognizer];
+    [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
+    
+    self.photoImageView.userInteractionEnabled = YES;
 	
 	// Action buttons
 	[self.buttonsPlaceholderView addSubview:self.photoButtonsView];
@@ -88,18 +73,18 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 
 - (void)updateImage
 {
-    CATransform3D currentTranslationTransform = CATransform3DMakeTranslation(_currentTranslation.x, _currentTranslation.y, 0.f);
-    CATransform3D currentScaleTransform = CATransform3DMakeScale(_currentScale, _currentScale, 1.f);
+    CGAffineTransform currentTranslationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
+    CGAffineTransform currentScaleTransform = CGAffineTransformMakeScale(_currentScale, _currentScale);
     
-    CATransform3D currentTransform = CATransform3DConcat(currentScaleTransform, currentTranslationTransform);
-    self.imageSublayer.transform = CATransform3DConcat(_initialTransform, currentTransform);
+    CGAffineTransform currentTransform = CGAffineTransformConcat(currentScaleTransform, currentTranslationTransform);
+    self.photoImageView.transform = CGAffineTransformConcat(currentTransform, _initialTransform);
 }
 
 #pragma mark UIGestureRecognizerDelegate protocol implementation
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    _initialTransform = self.imageSublayer.transform;
+    _initialTransform = self.photoImageView.transform;
     
     _currentTranslation = CGPointZero;
     _currentScale = 1.f;
@@ -113,15 +98,15 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 	
-	CGRect viewBounds = self.photoView.bounds;
+	CGRect viewBounds = self.photoImageView.bounds;
 	CGSize imageSize = image.size;
 	CGFloat scale = (imageSize.height>imageSize.width) ? CGRectGetHeight(viewBounds)/imageSize.height : CGRectGetWidth(viewBounds)/imageSize.width;
 	CGRect frame = CGRectMake(0.0, 0.0, imageSize.width * scale, imageSize.height * scale);
 	frame = rectCenteredInRect(frame, viewBounds);
 	
-	self.imageSublayer.transform = CATransform3DIdentity;
-	self.imageSublayer.frame = frame;
-    self.imageSublayer.contents = (__bridge id)image.CGImage;
+	self.photoImageView.transform = CGAffineTransformIdentity;
+	self.photoImageView.frame = frame;
+    self.photoImageView.image = image;
 	
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -154,19 +139,9 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 	self.photoButtonsView.hidden = YES;
 }
 
-- (UIImage*)maskedImage
+- (UIImage *)maskedImage
 {
-	// create a CG context
-	UIGraphicsBeginImageContextWithOptions(self.photoView.bounds.size, NO, [UIScreen mainScreen].scale);
-	
-	// render into the new context
-	[self.photoView.layer renderInContext:UIGraphicsGetCurrentContext()];
-	
-	// get the image out of the context
-	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-
-	return image;
+	return nil;
 }
 
 - (IBAction)shareOnFacebook:(id)sender

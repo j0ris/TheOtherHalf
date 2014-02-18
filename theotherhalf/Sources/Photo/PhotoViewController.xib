@@ -9,7 +9,7 @@
                 <outlet property="buttonsPlaceholderView" destination="0Ow-ll-J53" id="ycE-VJ-AOs"/>
                 <outlet property="choosePhotoButton" destination="OqJ-tY-czT" id="Vmr-UF-NIA"/>
                 <outlet property="photoButtonsView" destination="soy-OX-r7N" id="9CK-43-Ayo"/>
-                <outlet property="photoView" destination="TfC-Go-svY" id="1z0-01-JZH"/>
+                <outlet property="photoImageView" destination="DVq-xJ-Bce" id="XI3-Ru-pqT"/>
                 <outlet property="sharingButtonsView" destination="iKH-r7-5FB" id="fMA-rT-OVb"/>
                 <outlet property="takePhotoButton" destination="5sa-Hj-80y" id="fOy-JV-f6i"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -20,22 +20,25 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2z-Vz-SUA" userLabel="White Background View">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2z-Vz-SUA" userLabel="Background View">
                     <rect key="frame" x="0.0" y="124" width="320" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.14901960784313725" green="0.16078431372549018" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfC-Go-svY" userLabel="Photo View">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVq-xJ-Bce" userLabel="Photo Image View">
                     <rect key="frame" x="0.0" y="124" width="320" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ll-J53">
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mask-overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-4n-Yhl" userLabel="Mask Image View">
+                    <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ll-J53" userLabel="Buttons Placeholder View">
                     <rect key="frame" x="58" y="482" width="204" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu" userLabel="Website Button">
                     <rect key="frame" x="-78" y="32" width="320" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -150,5 +153,6 @@
         <image name="button-languages.png" width="109" height="12"/>
         <image name="button-twitter.png" width="48" height="48"/>
         <image name="logo-website.png" width="320" height="80"/>
+        <image name="mask-overlay.png" width="320" height="320"/>
     </resources>
 </document>
