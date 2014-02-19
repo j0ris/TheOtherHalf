@@ -9,11 +9,6 @@
 #import "PhotoViewController.h"
 #import <Social/Social.h>
 
-CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
-{
-	return CGRectOffset(rect, CGRectGetMidX(mainRect)-CGRectGetMidX(rect), CGRectGetMidY(mainRect)-CGRectGetMidY(rect));
-}
-
 @interface PhotoViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *buttonsPlaceholderView;
