@@ -163,7 +163,22 @@
 	
     self.photoImageView.image = image;
 	
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark UINavigationControllerDelegate protocol implementation
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // Fix issues with the status bar color when the image picker is displayed
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 }
 
 #pragma mark Actions Buttons
