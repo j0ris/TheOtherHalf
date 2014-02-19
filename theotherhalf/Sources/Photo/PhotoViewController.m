@@ -91,7 +91,7 @@
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
-- (void)updateImage
+- (void)updateImageForScale:(BOOL)isScale
 {
     // Convert in the coordinate system of the view so that scaling applies from the center, not from the upper left angle
     CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(-self.photoImageView.center.x, -self.photoImageView.center.y);
@@ -107,8 +107,8 @@
     if (CGRectContainsRect(frame, self.photoPlaceholderView.bounds)) {
         self.photoImageView.frame = frame;
     }
-    // Otherwise cancel the recognizer and animate frame to original location
-    else {
+    // Otherwise cancel the recognizer and animate frame to original location (only for rotations)
+    else if (isScale) {
         for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
             gestureRecognizer.enabled = NO;
             gestureRecognizer.enabled = YES;
@@ -225,13 +225,13 @@
 - (void)panImage:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     _currentTranslation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
-    [self updateImage];
+    [self updateImageForScale:NO];
 }
 
 - (void)pinchImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
     _currentScale = pinchGestureRecognizer.scale;
-    [self updateImage];
+    [self updateImageForScale:YES];
 }
 
 - (void)resetImage:(UITapGestureRecognizer *)tapGestureRecognizer
