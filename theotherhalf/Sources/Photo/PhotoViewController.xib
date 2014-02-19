@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="buttonsPlaceholderView" destination="0Ow-ll-J53" id="ycE-VJ-AOs"/>
                 <outlet property="choosePhotoButton" destination="OqJ-tY-czT" id="Vmr-UF-NIA"/>
+                <outlet property="maskImageView" destination="Adf-4n-Yhl" id="8Fr-y2-99d"/>
                 <outlet property="photoButtonsView" destination="soy-OX-r7N" id="9CK-43-Ayo"/>
                 <outlet property="photoImageView" destination="DVq-xJ-Bce" id="XI3-Ru-pqT"/>
                 <outlet property="photoPlaceholderView" destination="MKx-lJ-f35" id="IKV-p2-nJf"/>

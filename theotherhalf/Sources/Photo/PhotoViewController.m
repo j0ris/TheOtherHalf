@@ -19,6 +19,7 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 @property (nonatomic, weak) IBOutlet UIView *buttonsPlaceholderView;
 @property (nonatomic, weak) IBOutlet UIView *photoPlaceholderView;
 @property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *maskImageView;
 @property (nonatomic, weak) IBOutlet UIView *photoButtonsView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
 @property (nonatomic, weak) IBOutlet UIButton *choosePhotoButton;
@@ -67,6 +68,16 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 	[self.buttonsPlaceholderView addSubview:self.photoButtonsView];
 	[self.buttonsPlaceholderView addSubview:self.sharingButtonsView];
 	self.sharingButtonsView.hidden = YES;
+}
+
+#pragma mark Localization
+
+- (void)localize
+{
+    [super localize];
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"mask-overlay" ofType:@"png"];
+    self.maskImageView.image = [UIImage imageWithContentsOfFile:imagePath];
 }
 
 #pragma mark Helpers
