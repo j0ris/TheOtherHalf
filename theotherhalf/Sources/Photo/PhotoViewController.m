@@ -24,6 +24,8 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 @property (nonatomic, weak) IBOutlet UIButton *choosePhotoButton;
 @property (nonatomic, weak) IBOutlet UIView *sharingButtonsView;
 
+@property (nonatomic, strong) NSArray *gestureRecognizers;
+
 @end
 
 @implementation PhotoViewController {
@@ -53,6 +55,8 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
     pinchGestureRecognizer.delegate = self;
     [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
+    
+    self.gestureRecognizers = @[panGestureRecognizer, pinchGestureRecognizer];
     
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.photoImageView.userInteractionEnabled = YES;
@@ -86,13 +90,22 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
     CGAffineTransform translationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
     CGAffineTransform transform = CGAffineTransformConcat(convScaleTransform, translationTransform);
     
-    // Ensure the mask always covers the image
+    // If the mask fully covers the new frame, apply the frame
     CGRect frame = CGRectApplyAffineTransform(_initialFrame, transform);
-    if (! CGRectContainsRect(frame, self.photoPlaceholderView.bounds)) {
-        return;
+    if (CGRectContainsRect(frame, self.photoPlaceholderView.bounds)) {
+        self.photoImageView.frame = frame;
     }
-    
-    self.photoImageView.frame = frame;
+    // Otherwise cancel the recognizer and animate frame to original location
+    else {
+        for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
+            gestureRecognizer.enabled = NO;
+            gestureRecognizer.enabled = YES;
+        }
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            self.photoImageView.frame = self.photoPlaceholderView.bounds;
+        }];
+    }
 }
 
 #pragma mark UIGestureRecognizerDelegate protocol implementation
@@ -148,7 +161,7 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 
 - (UIImage *)maskedImage
 {
-	return nil;
+    return [self.photoPlaceholderView flattenedImage];
 }
 
 - (IBAction)shareOnFacebook:(id)sender
