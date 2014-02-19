@@ -85,7 +85,7 @@
 	// Action buttons
 	[self.buttonsPlaceholderView addSubview:self.photoButtonsView];
 	[self.buttonsPlaceholderView addSubview:self.sharingButtonsView];
-	self.sharingButtonsView.hidden = YES;
+	self.sharingButtonsView.alpha = 0.f;
 }
 
 #pragma mark Localization
@@ -168,18 +168,14 @@
 
 #pragma mark Actions Buttons
 
-- (void)hideSharingButtons
+- (void)setSharingInterfaceHidden:(BOOL)hidden
 {
-	self.sharingButtonsView.hidden = YES;
-	self.photoButtonsView.hidden = NO;
-	self.photoImageView.userInteractionEnabled = YES;
-}
-
-- (void)showSharingButtons
-{
-	self.sharingButtonsView.hidden = NO;
-	self.photoButtonsView.hidden = YES;
-	self.photoImageView.userInteractionEnabled = NO;
+    self.photoImageView.userInteractionEnabled = hidden;
+    
+    [UIView animateWithDuration:0.4f animations:^{
+        self.sharingButtonsView.alpha = hidden ? 0.f : 1.f;
+        self.photoButtonsView.alpha = hidden ? 1.f : 0.f;
+    }];
 }
 
 #pragma mark Actions
@@ -206,7 +202,7 @@
 
 - (IBAction)validate:(id)sender
 {
-	[self showSharingButtons];
+	[self setSharingInterfaceHidden:NO];
 }
 
 - (UIImage *)maskedImage
@@ -285,7 +281,7 @@
 	{
 		[self resetImage:nil];
 		self.photoImageView.image = nil;
-		[self hideSharingButtons];
+		[self setSharingInterfaceHidden:YES];
     }
 }
 
