@@ -172,12 +172,14 @@
 {
 	self.sharingButtonsView.hidden = YES;
 	self.photoButtonsView.hidden = NO;
+	self.photoImageView.userInteractionEnabled = YES;
 }
 
 - (void)showSharingButtons
 {
 	self.sharingButtonsView.hidden = NO;
 	self.photoButtonsView.hidden = YES;
+	self.photoImageView.userInteractionEnabled = NO;
 }
 
 #pragma mark Actions
