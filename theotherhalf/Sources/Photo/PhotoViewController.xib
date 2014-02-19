@@ -22,14 +22,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZC-xS-ADV" userLabel="Top Spacer View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZC-xS-ADV" userLabel="Top Spacer View">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu" userLabel="Website Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M93-W4-HIu" userLabel="Website Button">
                             <rect key="frame" x="20" y="46" width="146" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="146" id="Zej-fx-oqP"/>
                                 <constraint firstAttribute="height" constant="42" id="xe3-BS-dOM"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -40,11 +41,12 @@
                                 <action selector="goToWebSite:" destination="-1" eventType="touchUpInside" id="zvQ-Xd-cXz"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-mz-Gri" userLabel="Language Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-mz-Gri" userLabel="Language Button">
                             <rect key="frame" x="191" y="45" width="109" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="5Ib-Tq-0g0"/>
+                                <constraint firstAttribute="width" constant="109" id="g3P-wo-08x"/>
                             </constraints>
                             <state key="normal" image="button-languages.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,10 +59,12 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="M93-W4-HIu" secondAttribute="centerY" constant="-5" id="AgI-Yk-k7f"/>
+                        <constraint firstItem="M93-W4-HIu" firstAttribute="leading" secondItem="EZC-xS-ADV" secondAttribute="leading" constant="20" id="Rl2-Rz-sl2"/>
+                        <constraint firstAttribute="trailing" secondItem="Q2y-mz-Gri" secondAttribute="trailing" constant="20" id="VYX-Ux-GD3"/>
                         <constraint firstAttribute="centerY" secondItem="Q2y-mz-Gri" secondAttribute="centerY" constant="-5" id="pQN-YM-WLv"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKx-lJ-f35" userLabel="Photo Placeholder View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKx-lJ-f35" userLabel="Photo Placeholder View">
                     <rect key="frame" x="0.0" y="124" width="320" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -76,17 +80,19 @@
                     <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="320" id="Iep-Ro-Z6d"/>
+                        <constraint firstAttribute="width" constant="320" id="UJ8-hH-JLP"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jGD-M8-Nfq" userLabel="Bottom Spacer View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGD-M8-Nfq" userLabel="Bottom Spacer View">
                     <rect key="frame" x="0.0" y="444" width="320" height="124"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ll-J53" userLabel="Buttons Placeholder View">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ll-J53" userLabel="Buttons Placeholder View">
                             <rect key="frame" x="58" y="38" width="204" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="204" id="SpY-i4-He1"/>
                                 <constraint firstAttribute="height" constant="48" id="ebM-2d-TaD"/>
                             </constraints>
                         </view>
@@ -94,6 +100,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="0Ow-ll-J53" secondAttribute="centerY" id="EAx-xh-Zlv"/>
+                        <constraint firstAttribute="centerX" secondItem="0Ow-ll-J53" secondAttribute="centerX" id="Tv4-HG-PkU"/>
                     </constraints>
                 </view>
             </subviews>
@@ -101,7 +108,12 @@
             <constraints>
                 <constraint firstItem="jGD-M8-Nfq" firstAttribute="top" secondItem="MKx-lJ-f35" secondAttribute="bottom" id="0A9-Qx-4O7"/>
                 <constraint firstAttribute="bottom" secondItem="jGD-M8-Nfq" secondAttribute="bottom" id="5P5-Ic-w6f"/>
+                <constraint firstItem="jGD-M8-Nfq" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="P8n-Az-gU5"/>
+                <constraint firstItem="EZC-xS-ADV" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="VhM-fF-tUy"/>
                 <constraint firstItem="MKx-lJ-f35" firstAttribute="top" secondItem="EZC-xS-ADV" secondAttribute="bottom" id="Yfq-xa-pFy"/>
+                <constraint firstAttribute="centerX" secondItem="MKx-lJ-f35" secondAttribute="centerX" id="eat-8C-T6c"/>
+                <constraint firstAttribute="trailing" secondItem="jGD-M8-Nfq" secondAttribute="trailing" id="fpc-7Z-0ZX"/>
+                <constraint firstAttribute="trailing" secondItem="EZC-xS-ADV" secondAttribute="trailing" id="iod-zU-kbB"/>
                 <constraint firstAttribute="centerY" secondItem="MKx-lJ-f35" secondAttribute="centerY" id="mtv-QE-P3L"/>
                 <constraint firstItem="EZC-xS-ADV" firstAttribute="top" secondItem="1" secondAttribute="top" id="sb7-be-UNS"/>
             </constraints>
