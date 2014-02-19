@@ -26,7 +26,7 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 @end
 
 @implementation PhotoViewController {
-    CGAffineTransform _initialTransform;                    // Initial transform when a gesture begins
+    CGRect _initialFrame;
     CGPoint _currentTranslation;
     CGFloat _currentScale;
 }
@@ -73,18 +73,23 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 
 - (void)updateImage
 {
-    CGAffineTransform currentTranslationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
-    CGAffineTransform currentScaleTransform = CGAffineTransformMakeScale(_currentScale, _currentScale);
+    // Convert in the coordinate system of the view so that scaling applies from the center, not from the upper left angle
+    CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(-self.photoImageView.center.x, -self.photoImageView.center.y);
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(_currentScale, _currentScale);
+    CGAffineTransform convScaleTransform = CGAffineTransformConcat(CGAffineTransformConcat(centerTransform, scaleTransform),
+                                                               CGAffineTransformInvert(centerTransform));
     
-    CGAffineTransform currentTransform = CGAffineTransformConcat(currentScaleTransform, currentTranslationTransform);
-    self.photoImageView.transform = CGAffineTransformConcat(currentTransform, _initialTransform);
+    CGAffineTransform translationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
+    CGAffineTransform transform = CGAffineTransformConcat(convScaleTransform, translationTransform);
+    
+    self.photoImageView.frame = CGRectApplyAffineTransform(_initialFrame, transform);
 }
 
 #pragma mark UIGestureRecognizerDelegate protocol implementation
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    _initialTransform = self.photoImageView.transform;
+    _initialFrame = self.photoImageView.frame;
     
     _currentTranslation = CGPointZero;
     _currentScale = 1.f;
