@@ -167,7 +167,11 @@
 
 - (UIImage *)maskedImage
 {
-    return [self.photoPlaceholderView flattenedImage];
+	UIGraphicsBeginImageContextWithOptions(self.photoPlaceholderView.bounds.size, NO, 0.f);
+	[self.photoPlaceholderView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+    return image;
 }
 
 - (IBAction)shareOnFacebook:(id)sender
