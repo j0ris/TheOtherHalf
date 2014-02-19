@@ -54,6 +54,10 @@
     pinchGestureRecognizer.delegate = self;
     [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
     
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resetImage:)];
+    tapGestureRecognizer.numberOfTapsRequired = 2;
+    [self.photoImageView addGestureRecognizer:tapGestureRecognizer];
+    
     self.gestureRecognizers = @[panGestureRecognizer, pinchGestureRecognizer];
     
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -228,6 +232,13 @@
 {
     _currentScale = pinchGestureRecognizer.scale;
     [self updateImage];
+}
+
+- (void)resetImage:(UITapGestureRecognizer *)tapGestureRecognizer
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.photoImageView.frame = self.photoPlaceholderView.bounds;
+    }];
 }
 
 @end
