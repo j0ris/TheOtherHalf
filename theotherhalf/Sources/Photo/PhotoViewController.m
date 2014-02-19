@@ -7,6 +7,8 @@
 //
 
 #import "PhotoViewController.h"
+
+#import "WBSuccessNoticeView.h"
 #import <Social/Social.h>
 
 @interface PhotoViewController ()
@@ -209,6 +211,9 @@
 - (IBAction)saveToCameraRoll:(id)sender
 {
 	UIImageWriteToSavedPhotosAlbum([self maskedImage], nil, nil, nil);
+    
+    WBSuccessNoticeView *successNoticeView = [WBSuccessNoticeView successNoticeInView:self.view title:NSLocalizedString(@"Saved to Camera Roll", nil)];
+    [successNoticeView show];
 }
 
 #pragma mark Gesture recognizers
