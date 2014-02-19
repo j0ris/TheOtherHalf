@@ -22,11 +22,11 @@
                     <dataDetectorType key="dataDetectorTypes"/>
                 </webView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwG-IT-pd7">
-                    <rect key="frame" x="282" y="25" width="30" height="30"/>
+                    <rect key="frame" x="272" y="5" width="56" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Xzl-CV-hqJ"/>
-                        <constraint firstAttribute="width" constant="30" id="qky-6H-Itr"/>
+                        <constraint firstAttribute="width" constant="56" id="Cfa-Uo-8sh"/>
+                        <constraint firstAttribute="height" constant="56" id="ohF-ma-KVY"/>
                     </constraints>
                     <state key="normal" image="button-close.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,12 +38,12 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="HwG-IT-pd7" secondAttribute="trailing" constant="8" id="9oM-JR-Er7"/>
+                <constraint firstAttribute="trailing" secondItem="HwG-IT-pd7" secondAttribute="trailing" constant="-8" id="DJH-52-GqC"/>
                 <constraint firstItem="q5g-pB-daC" firstAttribute="top" secondItem="1" secondAttribute="top" constant="51" id="aOa-ax-8gn"/>
                 <constraint firstAttribute="trailing" secondItem="q5g-pB-daC" secondAttribute="trailing" id="bG3-0f-j4t"/>
-                <constraint firstItem="HwG-IT-pd7" firstAttribute="top" secondItem="1" secondAttribute="top" constant="25" id="jZP-2T-9hu"/>
                 <constraint firstItem="q5g-pB-daC" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="kxb-V6-mdJ"/>
                 <constraint firstAttribute="bottom" secondItem="q5g-pB-daC" secondAttribute="bottom" id="wQs-L8-U7f"/>
+                <constraint firstItem="HwG-IT-pd7" firstAttribute="top" secondItem="1" secondAttribute="top" constant="5" id="yjM-0Z-aaw"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
