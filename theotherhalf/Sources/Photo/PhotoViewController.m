@@ -34,6 +34,23 @@
 
 #pragma mark View lifecycle
 
+- (BOOL)canBecomeFirstResponder
+{
+	return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[self resignFirstResponder];
+	[super viewWillDisappear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -149,6 +166,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark Actions Buttons
+
+- (void)hideSharingButtons
+{
+	self.sharingButtonsView.hidden = YES;
+	self.photoButtonsView.hidden = NO;
+}
+
+- (void)showSharingButtons
+{
+	self.sharingButtonsView.hidden = NO;
+	self.photoButtonsView.hidden = YES;
+}
+
 #pragma mark Actions
 
 - (IBAction)goToWebSite:(id)sender
@@ -173,8 +204,7 @@
 
 - (IBAction)validate:(id)sender
 {
-	self.sharingButtonsView.hidden = NO;
-	self.photoButtonsView.hidden = YES;
+	[self showSharingButtons];
 }
 
 - (UIImage *)maskedImage
@@ -245,6 +275,16 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.photoImageView.frame = self.photoPlaceholderView.bounds;
     }];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
+{
+	if (motion == UIEventSubtypeMotionShake)
+	{
+		[self resetImage:nil];
+		self.photoImageView.image = nil;
+		[self hideSharingButtons];
+    }
 }
 
 @end
