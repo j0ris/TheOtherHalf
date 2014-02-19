@@ -102,21 +102,35 @@
     CGAffineTransform translationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
     CGAffineTransform transform = CGAffineTransformConcat(convScaleTransform, translationTransform);
     
-    // If the mask fully covers the new frame, apply the frame
+    // If the mask covers the new frame, apply the frame. Only takes the left half of the mask into account (where most of the
+    // photo appears), so that photos with subject on the right can be displayed properly
+    CGRect maskOptimalFrame = CGRectMake(0.f,
+                                         0.f,
+                                         roundf(CGRectGetWidth(self.photoPlaceholderView.bounds) / 2.f),
+                                         CGRectGetHeight(self.photoPlaceholderView.bounds));
     CGRect frame = CGRectApplyAffineTransform(_initialFrame, transform);
-    if (CGRectContainsRect(frame, self.photoPlaceholderView.bounds)) {
-        self.photoImageView.frame = frame;
-    }
-    // Otherwise cancel the recognizer and animate frame to original location (only for rotations)
-    else if (isScale) {
-        for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
-            gestureRecognizer.enabled = NO;
-            gestureRecognizer.enabled = YES;
+    
+    // When scaling, the image might become too small. Reset with an animation
+    if (isScale) {
+        if (! CGRectContainsRect(frame, self.photoPlaceholderView.bounds)) {
+            for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
+                gestureRecognizer.enabled = NO;
+                gestureRecognizer.enabled = YES;
+            }
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                self.photoImageView.frame = self.photoPlaceholderView.bounds;
+            }];
         }
-        
-        [UIView animateWithDuration:0.2 animations:^{
-            self.photoImageView.frame = self.photoPlaceholderView.bounds;
-        }];
+        else {
+            self.photoImageView.frame = frame;
+        }
+    }
+    // Let translate the image to the left part of the mask
+    else {
+        if (CGRectContainsRect(frame, maskOptimalFrame)) {
+            self.photoImageView.frame = frame;
+        }
     }
 }
 
