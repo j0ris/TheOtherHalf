@@ -17,6 +17,7 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 @interface PhotoViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *buttonsPlaceholderView;
+@property (nonatomic, weak) IBOutlet UIView *photoPlaceholderView;
 @property (nonatomic, weak) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, weak) IBOutlet UIView *photoButtonsView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
@@ -53,7 +54,10 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
     pinchGestureRecognizer.delegate = self;
     [self.photoImageView addGestureRecognizer:pinchGestureRecognizer];
     
+    self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.photoImageView.userInteractionEnabled = YES;
+    
+    self.photoPlaceholderView.clipsToBounds = YES;
 	
 	// Action buttons
 	[self.buttonsPlaceholderView addSubview:self.photoButtonsView];
@@ -82,7 +86,13 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
     CGAffineTransform translationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
     CGAffineTransform transform = CGAffineTransformConcat(convScaleTransform, translationTransform);
     
-    self.photoImageView.frame = CGRectApplyAffineTransform(_initialFrame, transform);
+    // Ensure the mask always covers the image
+    CGRect frame = CGRectApplyAffineTransform(_initialFrame, transform);
+    if (! CGRectContainsRect(frame, self.photoPlaceholderView.bounds)) {
+        return;
+    }
+    
+    self.photoImageView.frame = frame;
 }
 
 #pragma mark UIGestureRecognizerDelegate protocol implementation
@@ -103,14 +113,6 @@ CGRect rectCenteredInRect(CGRect rect, CGRect mainRect)
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 	
-	CGRect viewBounds = self.photoImageView.bounds;
-	CGSize imageSize = image.size;
-	CGFloat scale = (imageSize.height>imageSize.width) ? CGRectGetHeight(viewBounds)/imageSize.height : CGRectGetWidth(viewBounds)/imageSize.width;
-	CGRect frame = CGRectMake(0.0, 0.0, imageSize.width * scale, imageSize.height * scale);
-	frame = rectCenteredInRect(frame, viewBounds);
-	
-	self.photoImageView.transform = CGAffineTransformIdentity;
-	self.photoImageView.frame = frame;
     self.photoImageView.image = image;
 	
     [self dismissViewControllerAnimated:YES completion:nil];
