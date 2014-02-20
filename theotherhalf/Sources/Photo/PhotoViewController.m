@@ -254,7 +254,7 @@
 	if(shouldComposeMessage)
 	{
 		SLComposeViewController *messageSheet = [SLComposeViewController composeViewControllerForServiceType:serviceType];
-		[messageSheet setInitialText:NSLocalizedString(@"I am the other half.", @"Default message content for sharing")];
+		[messageSheet setInitialText:NSLocalizedString(@"We are the other half. #wearetheotherhalf", @"Default message content for sharing")];
 		[messageSheet addImage:[self maskedImage]];
 		[messageSheet addURL:[NSURL URLWithString:@"http://theotherhalf.ch"]];
 		[self presentViewController:messageSheet animated:YES completion:nil];
