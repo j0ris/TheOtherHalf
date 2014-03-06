@@ -36,19 +36,19 @@
 
 - (BOOL)canBecomeFirstResponder
 {
-	return YES;
+    return YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	[super viewDidAppear:animated];
-	[self becomeFirstResponder];
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[self resignFirstResponder];
-	[super viewWillDisappear:animated];
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad
@@ -81,11 +81,11 @@
     self.photoImageView.userInteractionEnabled = YES;
     
     self.photoPlaceholderView.clipsToBounds = YES;
-	
-	// Action buttons
-	[self.buttonsPlaceholderView addSubview:self.photoButtonsView];
-	[self.buttonsPlaceholderView addSubview:self.sharingButtonsView];
-	self.sharingButtonsView.alpha = 0.f;
+    
+    // Action buttons
+    [self.buttonsPlaceholderView addSubview:self.photoButtonsView];
+    [self.buttonsPlaceholderView addSubview:self.sharingButtonsView];
+    self.sharingButtonsView.alpha = 0.f;
 }
 
 #pragma mark Localization
@@ -114,7 +114,7 @@
     CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(-self.photoImageView.center.x, -self.photoImageView.center.y);
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(_currentScale, _currentScale);
     CGAffineTransform convScaleTransform = CGAffineTransformConcat(CGAffineTransformConcat(centerTransform, scaleTransform),
-                                                               CGAffineTransformInvert(centerTransform));
+                                                                   CGAffineTransformInvert(centerTransform));
     
     CGAffineTransform translationTransform = CGAffineTransformMakeTranslation(_currentTranslation.x, _currentTranslation.y);
     CGAffineTransform transform = CGAffineTransformConcat(convScaleTransform, translationTransform);
@@ -160,9 +160,9 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-	
+    
     self.photoImageView.image = image;
-	
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -217,53 +217,50 @@
 
 - (IBAction)validate:(id)sender
 {
-	[self setSharingInterfaceHidden:NO];
+    [self setSharingInterfaceHidden:NO];
 }
 
 - (UIImage *)maskedImage
 {
-	UIGraphicsBeginImageContextWithOptions(self.photoPlaceholderView.bounds.size, NO, 0.f);
-	[self.photoPlaceholderView.layer renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
+    UIGraphicsBeginImageContextWithOptions(self.photoPlaceholderView.bounds.size, NO, 0.f);
+    [self.photoPlaceholderView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     return image;
 }
 
 - (IBAction)shareOnFacebook:(id)sender
 {
-	[self shareOnServiceType:SLServiceTypeFacebook];
+    [self shareOnServiceType:SLServiceTypeFacebook];
 }
 
 - (IBAction)shareOnTwitter:(id)sender
 {
-	[self shareOnServiceType:SLServiceTypeTwitter];
+    [self shareOnServiceType:SLServiceTypeTwitter];
 }
 
-- (void)shareOnServiceType:(NSString*)serviceType
+- (void)shareOnServiceType:(NSString *)serviceType
 {
-	BOOL shouldComposeMessage = NO;
-	if ([SLComposeViewController isAvailableForServiceType:serviceType])
-	{
-		shouldComposeMessage = YES;
-	}
-	else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
-	{
-		shouldComposeMessage = YES;
-	}
-	
-	if(shouldComposeMessage)
-	{
-		SLComposeViewController *messageSheet = [SLComposeViewController composeViewControllerForServiceType:serviceType];
-		[messageSheet setInitialText:NSLocalizedString(@"I am the other half.", @"Default message content for sharing")];
-		[messageSheet addImage:[self maskedImage]];
-		[messageSheet addURL:[NSURL URLWithString:@"http://theotherhalf.ch"]];
-		[self presentViewController:messageSheet animated:YES completion:nil];
-	}
+    BOOL shouldComposeMessage = NO;
+    if ([SLComposeViewController isAvailableForServiceType:serviceType]) {
+        shouldComposeMessage = YES;
+    }
+    else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        shouldComposeMessage = YES;
+    }
+    
+    if (shouldComposeMessage) {
+        SLComposeViewController *messageSheet = [SLComposeViewController composeViewControllerForServiceType:serviceType];
+        [messageSheet setInitialText:NSLocalizedString(@"I am the other half.", @"Default message content for sharing")];
+        [messageSheet addImage:[self maskedImage]];
+        [messageSheet addURL:[NSURL URLWithString:@"http://theotherhalf.ch"]];
+        [self presentViewController:messageSheet animated:YES completion:nil];
+    }
 }
 
 - (IBAction)saveToCameraRoll:(id)sender
 {
-	UIImageWriteToSavedPhotosAlbum([self maskedImage], nil, nil, nil);
+    UIImageWriteToSavedPhotosAlbum([self maskedImage], nil, nil, nil);
     
     WBSuccessNoticeView *successNoticeView = [WBSuccessNoticeView successNoticeInView:self.view title:NSLocalizedString(@"Saved to Camera Roll", nil)];
     [successNoticeView show];
@@ -290,13 +287,12 @@
     }];
 }
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-	if (motion == UIEventSubtypeMotionShake)
-	{
-		[self resetImage:nil];
-		self.photoImageView.image = nil;
-		[self setSharingInterfaceHidden:YES];
+    if (motion == UIEventSubtypeMotionShake) {
+        [self resetImage:nil];
+        self.photoImageView.image = nil;
+        [self setSharingInterfaceHidden:YES];
     }
 }
 

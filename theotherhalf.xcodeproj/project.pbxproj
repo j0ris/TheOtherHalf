@@ -283,6 +283,7 @@
 				A8F7E5A1619B4F6BB9407C7C /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		A92B329E18AAD3A9008B12D5 /* Products */ = {
 			isa = PBXGroup;
@@ -594,6 +595,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theotherhalf/Sources/theotherhalf-Prefix.pch";
 				INFOPLIST_FILE = "theotherhalf/Resources/theotherhalf-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -612,6 +614,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theotherhalf/Sources/theotherhalf-Prefix.pch";
 				INFOPLIST_FILE = "theotherhalf/Resources/theotherhalf-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

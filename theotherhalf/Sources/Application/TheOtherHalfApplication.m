@@ -47,10 +47,10 @@
 
 - (void)setLocalization:(NSString *)localization
 {
-	NSAssert([[[NSBundle mainBundle] localizations] indexOfObject:localization] != NSNotFound, @"Localization must be found in the main bundle");
+    NSAssert([[[NSBundle mainBundle] localizations] indexOfObject:localization] != NSNotFound, @"Localization must be found in the main bundle");
     [NSBundle setLocalization:localization];
-	
-	[self displayTextView];
+    
+    [self displayTextView];
 }
 
 - (void)displayTextView
