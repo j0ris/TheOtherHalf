@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/Animation/HLSLayerAnimation+Friend.h

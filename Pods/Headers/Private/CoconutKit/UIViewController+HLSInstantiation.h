@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/ViewControllers/UIViewController+HLSInstantiation.h

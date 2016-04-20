@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/Task/HLSTaskManager+Friend.h
