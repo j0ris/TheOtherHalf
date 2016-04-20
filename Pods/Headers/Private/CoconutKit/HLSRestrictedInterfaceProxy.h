@@ -1,0 +1,1 @@
+../../../CoconutKit/Tools/Scripts/PublicHeaders/HLSRestrictedInterfaceProxy.h

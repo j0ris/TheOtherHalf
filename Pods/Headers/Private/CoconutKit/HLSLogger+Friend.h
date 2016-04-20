@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/Logging/HLSLogger+Friend.h

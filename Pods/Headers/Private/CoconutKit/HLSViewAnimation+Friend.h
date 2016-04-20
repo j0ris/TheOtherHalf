@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/Animation/HLSViewAnimation+Friend.h

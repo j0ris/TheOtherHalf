@@ -1,0 +1,1 @@
+../../../CoconutKit/Tools/Scripts/PublicHeaders/HLSManagedObjectCopying.h

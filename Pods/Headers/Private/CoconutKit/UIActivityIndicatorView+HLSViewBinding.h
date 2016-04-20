@@ -1,0 +1,1 @@
+../../../CoconutKit/Tools/Scripts/PublicHeaders/UIActivityIndicatorView+HLSViewBinding.h

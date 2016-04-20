@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/Bindings/UIView+HLSViewBindingFriend.h

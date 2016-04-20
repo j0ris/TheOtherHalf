@@ -1,0 +1,1 @@
+../../../CoconutKit/CoconutKit/Sources/View/HLSTableViewCell+Protected.h
