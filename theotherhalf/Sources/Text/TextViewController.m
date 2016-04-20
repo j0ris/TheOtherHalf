@@ -21,8 +21,7 @@
 {
     [super viewDidLoad];
     
-    [self.webView makeBackgroundTransparent];
-    self.webView.shadowHidden = YES;
+    self.webView.transparent = YES;
     [self.webView fadeTop:0.1 bottom:0.1];
     
     NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"presentation" ofType:@"html"];
